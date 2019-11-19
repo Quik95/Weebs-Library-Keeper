@@ -1,0 +1,9 @@
+﻿html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 160px !important; /* Height of the footer */
+  padding: 0;
+}
