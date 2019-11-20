@@ -12,15 +12,14 @@ import Typography from '@material-ui/core/Typography';
 import useStyles from './AnimeCard.styles';
 
 // Custom components
-import WatchingProgress from './WatchingProgress/WatchingProgress';
-import EditAnimeButton from './EditAnimeButton/EditAnimeButton';
+import WatchingProgress from '../WatchingProgress/WatchingProgress';
 
 function AnimeCard(props) {
   const classes = useStyles();
 
   return (
     <Grid item xs={3}>
-      <Card className={classes.fabFix}>
+      <Card>
         <CardMedia
           image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
           className={classes.animeMedia}
@@ -31,7 +30,6 @@ function AnimeCard(props) {
           </Typography>
           <WatchingProgress />
         </CardContent>
-        <EditAnimeButton />
       </Card>
     </Grid>
   );
