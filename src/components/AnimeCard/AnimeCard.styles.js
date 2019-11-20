@@ -5,6 +5,6 @@ export default makeStyles(theme => ({
     height: '350px',
   },
   cardContent: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(1, 2),
   },
 }));

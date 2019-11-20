@@ -11,6 +11,9 @@ import Typography from '@material-ui/core/Typography';
 // styles
 import useStyles from './AnimeCard.styles';
 
+// Custom components
+import WatchingProgress from '../WatchingProgress/WatchingProgress';
+
 function AnimeCard(props) {
   const classes = useStyles();
 
@@ -25,6 +28,7 @@ function AnimeCard(props) {
           <Typography variant="body1" align="center" noWrap gutterBottom>
             Dr. Stone
           </Typography>
+          <WatchingProgress />
         </CardContent>
       </Card>
     </Grid>
