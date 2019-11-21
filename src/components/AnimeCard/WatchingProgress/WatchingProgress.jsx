@@ -14,7 +14,6 @@ const WatchingProgress = memo(function WatchingProgress(props) {
   return (
     <div className={classes.watchingProgress}>
       <Typography variant="caption">10/15</Typography>
-      <ProgressBar />
       <div className={classes.progressBarContainer}>
         <ProgressBar
           className="progress--watched"
