@@ -15,6 +15,20 @@ const WatchingProgress = memo(function WatchingProgress(props) {
     <div className={classes.watchingProgress}>
       <Typography variant="caption">10/15</Typography>
       <ProgressBar />
+      <div className={classes.progressBarContainer}>
+        <ProgressBar
+          className="progress--watched"
+          tooltipText="Number of episodes you watched"
+        />
+        <ProgressBar
+          className="progress--aired"
+          tooltipText="Number of episodes aired"
+        />
+        <ProgressBar
+          className="progress--total"
+          tooltipText="Total number of episodes"
+        />
+      </div>
     </div>
   );
 });

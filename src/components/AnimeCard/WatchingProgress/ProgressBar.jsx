@@ -1,22 +1,26 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
+// MUI
+import Tooltip from '@material-ui/core/Tooltip';
+
 // styles
 import clsx from 'clsx';
 import useStyles from './WatchingProgress.styles';
 
-const ProgressBar = memo(function ProgressBar(props) {
+const ProgressBar = memo(function ProgressBar({ className, tooltipText }) {
   const classes = useStyles();
 
   return (
-    <div className={classes.progressBarContainer}>
-      <div className={clsx(classes['progress--watched'], classes.progress)} />
-      <div className={clsx(classes['progress--aired'], classes.progress)} />
-      <div className={clsx(classes['progress--total'], classes.progress)} />
-    </div>
+    <Tooltip title={tooltipText}>
+      <div className={clsx(classes.progress, classes[className])} />
+    </Tooltip>
   );
 });
 
-ProgressBar.propTypes = {};
+ProgressBar.propTypes = {
+  className: PropTypes.string.isRequired,
+  tooltipText: PropTypes.string.isRequired,
+};
 
 export default ProgressBar;
