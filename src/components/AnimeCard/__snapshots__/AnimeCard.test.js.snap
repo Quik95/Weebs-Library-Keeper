@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AnimeCard/> Renders correctly 1`] = `
+<div
+  class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+  data-testid="AnimeCard"
+>
+  <div
+    class="MuiPaper-root MuiPaper-elevation1 MuiCard-root makeStyles-fabFix-3 MuiPaper-rounded"
+  >
+    <div
+      class="MuiCardMedia-root makeStyles-animeMedia-1"
+      style="background-image: url(https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg);"
+    />
+    <div
+      class="MuiCardContent-root makeStyles-cardContent-2"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 MuiTypography-noWrap MuiTypography-gutterBottom MuiTypography-alignCenter"
+      >
+        Dr. Stone
+      </p>
+      <div
+        class="makeStyles-watchingProgress-174"
+        data-testid="WatchingProgress"
+      >
+        <span
+          class="MuiTypography-root MuiTypography-caption"
+        >
+          10/15
+        </span>
+        <div
+          class="makeStyles-progressBarContainer-169"
+        >
+          <div
+            class="makeStyles-progress-170 makeStyles-progress--watched-172"
+            data-testid="ProgressBar"
+            title="Number of episodes you watched"
+          />
+          <div
+            class="makeStyles-progress-170 makeStyles-progress--aired-173"
+            data-testid="ProgressBar"
+            title="Number of episodes aired"
+          />
+          <div
+            class="makeStyles-progress-170 makeStyles-progress--total-171"
+            data-testid="ProgressBar"
+            title="Total number of episodes"
+          />
+        </div>
+      </div>
+    </div>
+    <button
+      aria-label="Edit anime"
+      class="MuiButtonBase-root MuiFab-root makeStyles-editButton-183 MuiFab-sizeSmall MuiFab-secondary"
+      data-testid="EditAnimeButton"
+      tabindex="0"
+      title="Click to edit anime"
+      type="button"
+    >
+      <span
+        class="MuiFab-label"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root makeStyles-editIcon-184"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+          />
+        </svg>
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</div>
+`;

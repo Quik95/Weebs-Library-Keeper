@@ -13,7 +13,11 @@ const EditAnimeButton = memo(function EditAnimeButton(props) {
   const classes = useStyles();
 
   return (
-    <Tooltip title="Click to edit anime" aria-label="Edit anime">
+    <Tooltip
+      title="Click to edit anime"
+      aria-label="Edit anime"
+      data-testid="EditAnimeButton"
+    >
       <Fab
         size="small"
         color="secondary"

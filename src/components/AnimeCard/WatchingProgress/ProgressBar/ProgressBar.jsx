@@ -6,13 +6,13 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 // styles
 import clsx from 'clsx';
-import useStyles from './WatchingProgress.styles';
+import useStyles from '../WatchingProgress.styles';
 
 const ProgressBar = memo(function ProgressBar({ className, tooltipText }) {
   const classes = useStyles();
 
   return (
-    <Tooltip title={tooltipText}>
+    <Tooltip title={tooltipText} data-testid="ProgressBar">
       <div className={clsx(classes.progress, classes[className])} />
     </Tooltip>
   );

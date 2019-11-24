@@ -1,6 +1,10 @@
 import { makeStyles, fade } from '@material-ui/core/styles';
 
 export default makeStyles(theme => ({
+  searchResultsFix: {
+    zIndex: 1200,
+    position: 'relative',
+  },
   root: {
     flexGrow: 1,
   },

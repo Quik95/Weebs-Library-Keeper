@@ -8,17 +8,18 @@ import { Typography } from '@material-ui/core';
 // styles
 import useStyles from './Main.styles.js';
 
+// Custom components
+import AnimeCard from '../AnimeCard/AnimeCard';
+
 export default function Main() {
   const classes = useStyles();
 
   return (
-    <main className={classes.main}>
+    <main className={classes.main} data-testid="main">
       <Container maxWidth="lg">
         <Grid container spacing={8}>
           {[0, 1, 2, 3, 4, 5].map(i => (
-            <Grid item key={i} xs={2}>
-              <Typography>{`Hello i'm item number ${i}`}</Typography>
-            </Grid>
+            <AnimeCard key={i} />
           ))}
         </Grid>
       </Container>
