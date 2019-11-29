@@ -6,9 +6,13 @@ import MuiListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import ListItemText from '@material-ui/core/ListItemText';
+import IconButton from '@material-ui/core/IconButton';
 
 // temporary
 import Icon from '@material-ui/icons/BeachAccess';
+
+// Icons
+import AddIcon from '@material-ui/icons/Add';
 
 // styles
 import useStyles from './SearchResults.styles';
@@ -28,6 +32,9 @@ const ListItem = memo(function ListItem(props) {
         secondary="21/11/2019 18:50"
         className={classes.listItemText}
       />
+      <IconButton>
+        <AddIcon />
+      </IconButton>
     </MuiListItem>
   );
 });

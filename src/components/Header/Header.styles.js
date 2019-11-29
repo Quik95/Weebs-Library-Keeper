@@ -48,7 +48,7 @@ export default makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       width: 120,
       '&:focus': {
-        width: 200,
+        width: 250,
       },
     },
   },
