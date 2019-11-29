@@ -1,14 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 
 import ListItem from './ListItem';
 
 describe('<ListItem/>', () => {
-  const { getByTestId } = render(<ListItem />);
-
   it('Renders correctly', () => {
-    const wrapper = getByTestId('ListItem');
-
-    expect(wrapper).toMatchSnapshot();
+    const tree = renderer.create(<ListItem />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

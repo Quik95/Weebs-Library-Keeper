@@ -2,29 +2,29 @@
 
 exports[`<Header/> Renders correctly 1`] = `
 <header
-  class="makeStyles-searchResultsFix-1"
+  className="makeStyles-searchResultsFix-1"
   data-testid="Header"
 >
   <header
-    class="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
+    className="MuiPaper-root MuiPaper-elevation4 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"
   >
     <div
-      class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      className="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
     >
       <h6
-        class="MuiTypography-root makeStyles-title-3 MuiTypography-h6 MuiTypography-noWrap"
+        className="MuiTypography-root makeStyles-title-3 MuiTypography-h6 MuiTypography-noWrap"
       >
         Weeb's Library Keeper
       </h6>
       <div
-        class="makeStyles-search-4"
+        className="makeStyles-search-4"
       >
         <div
-          class="makeStyles-searchIcon-5"
+          className="makeStyles-searchIcon-5"
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root"
+            className="MuiSvgIcon-root"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -35,33 +35,38 @@ exports[`<Header/> Renders correctly 1`] = `
           </svg>
         </div>
         <div
-          class="MuiInputBase-root makeStyles-inputRoot-6"
+          className="MuiInputBase-root makeStyles-inputRoot-6"
+          onClick={[Function]}
         >
           <input
             aria-label="search"
-            class="MuiInputBase-input makeStyles-inputInput-7"
+            className="MuiInputBase-input makeStyles-inputInput-7"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
             placeholder="Search…"
             type="text"
-            value=""
           />
         </div>
         <ul
-          class="MuiList-root makeStyles-listContainer-108 MuiList-padding"
+          className="MuiList-root makeStyles-listContainer-108 MuiList-padding"
           data-testid="SearchContainer"
         >
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -73,33 +78,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -111,33 +117,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -149,33 +156,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -187,33 +195,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -225,33 +234,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -263,33 +273,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -301,33 +312,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -339,33 +351,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -377,33 +390,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -415,33 +429,34 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>
             </div>
           </li>
           <li
-            class="MuiListItem-root MuiListItem-gutters"
+            className="MuiListItem-root MuiListItem-gutters"
             data-testid="ListItem"
+            disabled={false}
           >
             <div
-              class="MuiListItemAvatar-root"
+              className="MuiListItemAvatar-root"
             >
               <div
-                class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+                className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
               >
                 <svg
                   aria-hidden="true"
-                  class="MuiSvgIcon-root"
+                  className="MuiSvgIcon-root"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -453,15 +468,15 @@ exports[`<Header/> Renders correctly 1`] = `
               </div>
             </div>
             <div
-              class="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
+              className="MuiListItemText-root makeStyles-listItemText-109 MuiListItemText-multiline"
             >
               <span
-                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+                className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
               >
                 Dr. Stone
               </span>
               <p
-                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+                className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
               >
                 21/11/2019 18:50
               </p>

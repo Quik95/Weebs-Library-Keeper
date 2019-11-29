@@ -1,12 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 
 import Main from './Main';
 
 describe('<Main/>', () => {
-  const { getByTestId } = render(<Main />);
   it('Renders correctly', () => {
-    const main = getByTestId('main');
-    expect(main).toMatchSnapshot();
+    const tree = renderer.create(<Main />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

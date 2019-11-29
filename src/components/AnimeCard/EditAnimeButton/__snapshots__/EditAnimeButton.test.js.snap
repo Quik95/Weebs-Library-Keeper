@@ -2,19 +2,33 @@
 
 exports[`<EditAnimeButton/> Renders correctly 1`] = `
 <button
+  aria-describedby={null}
   aria-label="Edit anime"
-  class="MuiButtonBase-root MuiFab-root makeStyles-editButton-1 MuiFab-sizeSmall MuiFab-secondary"
+  className="MuiButtonBase-root MuiFab-root makeStyles-editButton-1 MuiFab-sizeSmall MuiFab-secondary"
   data-testid="EditAnimeButton"
-  tabindex="0"
+  disabled={false}
+  onBlur={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex={0}
   title="Click to edit anime"
   type="button"
 >
   <span
-    class="MuiFab-label"
+    className="MuiFab-label"
   >
     <svg
       aria-hidden="true"
-      class="MuiSvgIcon-root makeStyles-editIcon-2"
+      className="MuiSvgIcon-root makeStyles-editIcon-2"
       focusable="false"
       role="presentation"
       viewBox="0 0 24 24"
@@ -25,7 +39,7 @@ exports[`<EditAnimeButton/> Renders correctly 1`] = `
     </svg>
   </span>
   <span
-    class="MuiTouchRipple-root"
+    className="MuiTouchRipple-root"
   />
 </button>
 `;

@@ -1,13 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 
 import ProgressBar from './ProgressBar';
 
 describe('<ProgressBar/>', () => {
-  const { getByTestId } = render(<ProgressBar />);
-
   it('Renders correctly', () => {
-    const wrapper = getByTestId('ProgressBar');
-    expect(wrapper).toMatchSnapshot();
+    const tree = renderer.create(<ProgressBar />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

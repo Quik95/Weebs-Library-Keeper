@@ -2,18 +2,19 @@
 
 exports[`<ListItem/> Renders correctly 1`] = `
 <li
-  class="MuiListItem-root MuiListItem-gutters"
+  className="MuiListItem-root MuiListItem-gutters"
   data-testid="ListItem"
+  disabled={false}
 >
   <div
-    class="MuiListItemAvatar-root"
+    className="MuiListItemAvatar-root"
   >
     <div
-      class="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
+      className="MuiAvatar-root MuiAvatar-circle MuiAvatar-colorDefault"
     >
       <svg
         aria-hidden="true"
-        class="MuiSvgIcon-root"
+        className="MuiSvgIcon-root"
         focusable="false"
         role="presentation"
         viewBox="0 0 24 24"
@@ -25,15 +26,15 @@ exports[`<ListItem/> Renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="MuiListItemText-root makeStyles-listItemText-2 MuiListItemText-multiline"
+    className="MuiListItemText-root makeStyles-listItemText-2 MuiListItemText-multiline"
   >
     <span
-      class="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+      className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
     >
       Dr. Stone
     </span>
     <p
-      class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+      className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
     >
       21/11/2019 18:50
     </p>

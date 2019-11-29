@@ -2,7 +2,15 @@
 
 exports[`<ProgressBar/> Renders correctly 1`] = `
 <div
-  class="makeStyles-progress-2"
+  aria-describedby={null}
+  className="makeStyles-progress-2"
   data-testid="ProgressBar"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  onTouchEnd={[Function]}
+  onTouchStart={[Function]}
+  title={null}
 />
 `;

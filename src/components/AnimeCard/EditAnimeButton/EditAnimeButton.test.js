@@ -1,13 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 
 import EditAnimeButton from './EditAnimeButton';
 
 describe('<EditAnimeButton/>', () => {
-  const { getByTestId } = render(<EditAnimeButton />);
-
   it('Renders correctly', () => {
-    const wrapper = getByTestId('EditAnimeButton');
-    expect(wrapper).toMatchSnapshot();
+    const tree = renderer.create(<EditAnimeButton />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

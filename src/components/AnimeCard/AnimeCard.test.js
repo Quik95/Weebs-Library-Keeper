@@ -1,13 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 
 import AnimeCard from './AnimeCard';
 
 describe('<AnimeCard/>', () => {
-  const { getByTestId } = render(<AnimeCard />);
-
   it('Renders correctly', () => {
-    const wrapper = getByTestId('AnimeCard');
-    expect(wrapper).toMatchSnapshot();
+    const tree = renderer.create(<AnimeCard />).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

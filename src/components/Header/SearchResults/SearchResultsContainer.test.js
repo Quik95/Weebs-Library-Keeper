@@ -1,11 +1,11 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import renderer from 'react-test-renderer';
 
 import SearchResultsContainer from './SearchResultsContainer';
 
-test('Renders <SeachResultsContainer/> correctly', () => {
-  const { getByTestId } = render(<SearchResultsContainer />);
-
-  const wrapper = getByTestId('SearchContainer');
-  expect(wrapper).toMatchSnapshot();
+describe('<SearchResultsContainer/>', () => {
+  it('Renders correctly', () => {
+    const tree = renderer.create(<SearchResultsContainer />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -2,30 +2,51 @@
 
 exports[`<WatchingProgress/> Renders correctly 1`] = `
 <div
-  class="makeStyles-watchingProgress-6"
+  className="makeStyles-watchingProgress-6"
   data-testid="WatchingProgress"
 >
   <span
-    class="MuiTypography-root MuiTypography-caption"
+    className="MuiTypography-root MuiTypography-caption"
   >
     10/15
   </span>
   <div
-    class="makeStyles-progressBarContainer-1"
+    className="makeStyles-progressBarContainer-1"
   >
     <div
-      class="makeStyles-progress-2 makeStyles-progress--watched-4"
+      aria-describedby={null}
+      className="makeStyles-progress-2 makeStyles-progress--watched-4"
       data-testid="ProgressBar"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
       title="Number of episodes you watched"
     />
     <div
-      class="makeStyles-progress-2 makeStyles-progress--aired-5"
+      aria-describedby={null}
+      className="makeStyles-progress-2 makeStyles-progress--aired-5"
       data-testid="ProgressBar"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
       title="Number of episodes aired"
     />
     <div
-      class="makeStyles-progress-2 makeStyles-progress--total-3"
+      aria-describedby={null}
+      className="makeStyles-progress-2 makeStyles-progress--total-3"
       data-testid="ProgressBar"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      onTouchEnd={[Function]}
+      onTouchStart={[Function]}
       title="Total number of episodes"
     />
   </div>
