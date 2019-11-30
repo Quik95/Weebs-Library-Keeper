@@ -1,32 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AnimeCard/> Renders correctly 1`] = `
-<WithStyles(ForwardRef(Grid))
-  data-testid="AnimeCard"
-  item={true}
-  xs={3}
->
-  <WithStyles(ForwardRef(Card))
-    className="makeStyles-fabFix-3"
+<Fragment>
+  <WithStyles(ForwardRef(Grid))
+    data-testid="AnimeCard"
+    item={true}
+    xs={3}
   >
-    <WithStyles(ForwardRef(CardMedia))
-      className="makeStyles-animeMedia-1"
-      image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
-    />
-    <WithStyles(ForwardRef(CardContent))
-      className="makeStyles-cardContent-2"
+    <WithStyles(ForwardRef(Card))
+      className="makeStyles-fabFix-3"
     >
-      <WithStyles(ForwardRef(Typography))
-        align="center"
-        gutterBottom={true}
-        noWrap={true}
-        variant="body1"
+      <WithStyles(ForwardRef(CardMedia))
+        className="makeStyles-animeMedia-1"
+        image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
+      />
+      <WithStyles(ForwardRef(CardContent))
+        className="makeStyles-cardContent-2"
       >
-        Dr. Stone
-      </WithStyles(ForwardRef(Typography))>
-      <Memo(WatchingProgress) />
-    </WithStyles(ForwardRef(CardContent))>
-    <Memo(EditAnimeButton) />
-  </WithStyles(ForwardRef(Card))>
-</WithStyles(ForwardRef(Grid))>
+        <WithStyles(ForwardRef(Typography))
+          align="center"
+          gutterBottom={true}
+          noWrap={true}
+          variant="body1"
+        >
+          Dr. Stone
+        </WithStyles(ForwardRef(Typography))>
+        <Memo(WatchingProgress) />
+      </WithStyles(ForwardRef(CardContent))>
+      <Memo(EditAnimeButton)
+        handleOpenDialog={[Function]}
+      />
+    </WithStyles(ForwardRef(Card))>
+  </WithStyles(ForwardRef(Grid))>
+  <EditAnimeDialog
+    handleClose={[Function]}
+    maxWidth="md"
+    open={false}
+  />
+</Fragment>
 `;

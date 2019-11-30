@@ -9,7 +9,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 // styles
 import useStyles from './EditAnimeButton.styles';
 
-const EditAnimeButton = memo(function EditAnimeButton(props) {
+const EditAnimeButton = memo(function EditAnimeButton({ handleOpenDialog }) {
   const classes = useStyles();
 
   return (
@@ -23,6 +23,7 @@ const EditAnimeButton = memo(function EditAnimeButton(props) {
         color="secondary"
         aria-label="Edit anime"
         className={classes.editButton}
+        onClick={handleOpenDialog}
       >
         <EditIcon className={classes.editIcon} />
       </Fab>
@@ -30,6 +31,8 @@ const EditAnimeButton = memo(function EditAnimeButton(props) {
   );
 });
 
-EditAnimeButton.propTypes = {};
+EditAnimeButton.propTypes = {
+  handleOpenDialog: PropTypes.func.isRequired,
+};
 
 export default EditAnimeButton;

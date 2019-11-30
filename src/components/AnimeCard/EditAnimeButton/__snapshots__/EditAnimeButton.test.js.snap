@@ -10,6 +10,7 @@ exports[`<EditAnimeButton/> Renders correctly 1`] = `
     aria-label="Edit anime"
     className="makeStyles-editButton-1"
     color="secondary"
+    onClick={[MockFunction]}
     size="small"
   >
     <EditIcon

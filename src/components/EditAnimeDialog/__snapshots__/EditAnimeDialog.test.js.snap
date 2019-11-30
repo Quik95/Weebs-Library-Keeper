@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditAnimeDialog/> Renders correctly 1`] = `
+<WithStyles(ForwardRef(Dialog))
+  aria-labelledby="edit-anime-dialog"
+  maxWidth="md"
+  onClose={[MockFunction]}
+  open={true}
+>
+  <WithStyles(ForwardRef(DialogTitle))
+    id="edit-anime-dialog-anime-title"
+  >
+    Optional sizes
+  </WithStyles(ForwardRef(DialogTitle))>
+</WithStyles(ForwardRef(Dialog))>
+`;

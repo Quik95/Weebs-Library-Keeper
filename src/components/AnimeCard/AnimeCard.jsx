@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 // MUI
@@ -14,26 +14,39 @@ import useStyles from './AnimeCard.styles';
 // Custom components
 import WatchingProgress from './WatchingProgress/WatchingProgress';
 import EditAnimeButton from './EditAnimeButton/EditAnimeButton';
+import EditAnimeDialog from '../EditAnimeDialog/EditAnimeDialog';
 
 function AnimeCard(props) {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   const classes = useStyles();
 
+  const handleOpenDialog = () => setIsDialogOpen(true);
+  const handleCloseDialog = () => setIsDialogOpen(false);
+
   return (
-    <Grid item xs={3} data-testid="AnimeCard">
-      <Card className={classes.fabFix}>
-        <CardMedia
-          image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
-          className={classes.animeMedia}
-        />
-        <CardContent className={classes.cardContent}>
-          <Typography variant="body1" align="center" noWrap gutterBottom>
-            Dr. Stone
-          </Typography>
-          <WatchingProgress />
-        </CardContent>
-        <EditAnimeButton />
-      </Card>
-    </Grid>
+    <>
+      <Grid item xs={3} data-testid="AnimeCard">
+        <Card className={classes.fabFix}>
+          <CardMedia
+            image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
+            className={classes.animeMedia}
+          />
+          <CardContent className={classes.cardContent}>
+            <Typography variant="body1" align="center" noWrap gutterBottom>
+              Dr. Stone
+            </Typography>
+            <WatchingProgress />
+          </CardContent>
+          <EditAnimeButton handleOpenDialog={handleOpenDialog} />
+        </Card>
+      </Grid>
+      <EditAnimeDialog
+        open={isDialogOpen}
+        maxWidth="md"
+        handleClose={handleCloseDialog}
+      />
+    </>
   );
 }
 
