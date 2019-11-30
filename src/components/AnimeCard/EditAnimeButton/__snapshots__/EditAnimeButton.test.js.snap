@@ -1,45 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<EditAnimeButton/> Renders correctly 1`] = `
-<button
-  aria-describedby={null}
+<WithStyles(ForwardRef(Tooltip))
   aria-label="Edit anime"
-  className="MuiButtonBase-root MuiFab-root makeStyles-editButton-1 MuiFab-sizeSmall MuiFab-secondary"
   data-testid="EditAnimeButton"
-  disabled={false}
-  onBlur={[Function]}
-  onDragLeave={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  onKeyUp={[Function]}
-  onMouseDown={[Function]}
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
-  onMouseUp={[Function]}
-  onTouchEnd={[Function]}
-  onTouchMove={[Function]}
-  onTouchStart={[Function]}
-  tabIndex={0}
   title="Click to edit anime"
-  type="button"
 >
-  <span
-    className="MuiFab-label"
+  <WithStyles(ForwardRef(Fab))
+    aria-label="Edit anime"
+    className="makeStyles-editButton-1"
+    color="secondary"
+    size="small"
   >
-    <svg
-      aria-hidden="true"
-      className="MuiSvgIcon-root makeStyles-editIcon-2"
-      focusable="false"
-      role="presentation"
-      viewBox="0 0 24 24"
-    >
-      <path
-        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-      />
-    </svg>
-  </span>
-  <span
-    className="MuiTouchRipple-root"
-  />
-</button>
+    <EditIcon
+      className="makeStyles-editIcon-2"
+    />
+  </WithStyles(ForwardRef(Fab))>
+</WithStyles(ForwardRef(Tooltip))>
 `;

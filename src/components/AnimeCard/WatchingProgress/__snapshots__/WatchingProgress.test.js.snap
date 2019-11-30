@@ -5,49 +5,25 @@ exports[`<WatchingProgress/> Renders correctly 1`] = `
   className="makeStyles-watchingProgress-6"
   data-testid="WatchingProgress"
 >
-  <span
-    className="MuiTypography-root MuiTypography-caption"
+  <WithStyles(ForwardRef(Typography))
+    variant="caption"
   >
     10/15
-  </span>
+  </WithStyles(ForwardRef(Typography))>
   <div
     className="makeStyles-progressBarContainer-1"
   >
-    <div
-      aria-describedby={null}
-      className="makeStyles-progress-2 makeStyles-progress--watched-4"
-      data-testid="ProgressBar"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      title="Number of episodes you watched"
+    <Memo(ProgressBar)
+      className="progress--watched"
+      tooltipText="Number of episodes you watched"
     />
-    <div
-      aria-describedby={null}
-      className="makeStyles-progress-2 makeStyles-progress--aired-5"
-      data-testid="ProgressBar"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      title="Number of episodes aired"
+    <Memo(ProgressBar)
+      className="progress--aired"
+      tooltipText="Number of episodes aired"
     />
-    <div
-      aria-describedby={null}
-      className="makeStyles-progress-2 makeStyles-progress--total-3"
-      data-testid="ProgressBar"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
-      onTouchEnd={[Function]}
-      onTouchStart={[Function]}
-      title="Total number of episodes"
+    <Memo(ProgressBar)
+      className="progress--total"
+      tooltipText="Total number of episodes"
     />
   </div>
 </div>
