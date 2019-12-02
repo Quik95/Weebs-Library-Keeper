@@ -14,4 +14,14 @@ export default makeStyles(theme => ({
   formControlLabel: {
     marginTop: theme.spacing(1),
   },
+  dialogTitle: {
+    margin: 0,
+    padding: theme.spacing(2),
+  },
+  closeButton: {
+    position: 'absolute',
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500],
+  },
 }));
