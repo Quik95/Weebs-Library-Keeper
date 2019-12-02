@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders correctly 1`] = `
+<WithStyles(ForwardRef(DialogTitle))
+  disableTypography={true}
+>
+  <WithStyles(ForwardRef(Typography))
+    variant="h6"
+  />
+  <WithStyles(ForwardRef(IconButton))
+    aria-label="close"
+    onClick={[MockFunction]}
+  >
+    <CloseIcon />
+  </WithStyles(ForwardRef(IconButton))>
+</WithStyles(ForwardRef(DialogTitle))>
+`;

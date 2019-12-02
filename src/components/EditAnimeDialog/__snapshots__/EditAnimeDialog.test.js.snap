@@ -7,10 +7,10 @@ exports[`<EditAnimeDialog/> Renders correctly 1`] = `
   onClose={[MockFunction]}
   open={true}
 >
-  <WithStyles(ForwardRef(DialogTitle))
-    id="edit-anime-dialog-anime-title"
+  <Memo(DialogTitle)
+    onClose={[MockFunction]}
   >
-    Optional sizes
-  </WithStyles(ForwardRef(DialogTitle))>
+    Dr. Stone
+  </Memo(DialogTitle)>
 </WithStyles(ForwardRef(Dialog))>
 `;

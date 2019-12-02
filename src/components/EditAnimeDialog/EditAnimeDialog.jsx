@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 // MUI
 import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
 
 // styles
 import useStyles from './EditAnimeDialog.styles';
+
+// Custom components
+import DialogTitle from './DialogTitle/DialogTitle';
 
 export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
   const classes = useStyles();
@@ -18,9 +20,7 @@ export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
       onClose={handleClose}
       aria-labelledby="edit-anime-dialog"
     >
-      <DialogTitle id="edit-anime-dialog-anime-title">
-        Optional sizes
-      </DialogTitle>
+      <DialogTitle onClose={handleClose}>Dr. Stone</DialogTitle>
     </Dialog>
   );
 }
