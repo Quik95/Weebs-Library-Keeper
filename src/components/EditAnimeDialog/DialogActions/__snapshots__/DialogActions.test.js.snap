@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DialogActions/> Renders correctly 1`] = `
+<WithStyles(ForwardRef(DialogActions))>
+  <WithStyles(ForwardRef(Button))
+    color="secondary"
+    variant="contained"
+  >
+    Discard Changes
+  </WithStyles(ForwardRef(Button))>
+  <WithStyles(ForwardRef(Button))
+    color="primary"
+    variant="contained"
+  >
+    Save Changes
+  </WithStyles(ForwardRef(Button))>
+</WithStyles(ForwardRef(DialogActions))>
+`;

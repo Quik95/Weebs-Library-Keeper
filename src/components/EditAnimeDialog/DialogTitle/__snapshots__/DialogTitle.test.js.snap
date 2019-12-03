@@ -2,6 +2,7 @@
 
 exports[`Renders correctly 1`] = `
 <WithStyles(ForwardRef(DialogTitle))
+  className="makeStyles-dialogTitle-4"
   disableTypography={true}
 >
   <WithStyles(ForwardRef(Typography))
@@ -9,6 +10,7 @@ exports[`Renders correctly 1`] = `
   />
   <WithStyles(ForwardRef(IconButton))
     aria-label="close"
+    className="makeStyles-closeButton-5"
     onClick={[MockFunction]}
   >
     <CloseIcon />

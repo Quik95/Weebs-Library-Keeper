@@ -12,5 +12,8 @@ exports[`<EditAnimeDialog/> Renders correctly 1`] = `
   >
     Dr. Stone
   </Memo(DialogTitle)>
+  <Memo(DialogActions)
+    handleClose={[MockFunction]}
+  />
 </WithStyles(ForwardRef(Dialog))>
 `;

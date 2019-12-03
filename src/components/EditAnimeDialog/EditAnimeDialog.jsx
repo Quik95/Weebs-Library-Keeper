@@ -9,6 +9,7 @@ import useStyles from './EditAnimeDialog.styles';
 
 // Custom components
 import DialogTitle from './DialogTitle/DialogTitle';
+import DialogActions from './DialogActions/DialogActions';
 
 export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
   const classes = useStyles();
@@ -21,6 +22,7 @@ export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
       aria-labelledby="edit-anime-dialog"
     >
       <DialogTitle onClose={handleClose}>Dr. Stone</DialogTitle>
+      <DialogActions handleClose={handleClose} />
     </Dialog>
   );
 }
