@@ -35,7 +35,7 @@ const DialogTitle = memo(function DialogTitle({ onClose, children, ...other }) {
 
 DialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default DialogTitle;
