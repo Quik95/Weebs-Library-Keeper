@@ -6,6 +6,7 @@ export default makeStyles(theme => ({
   dialogActions: {
     display: 'grid',
     gridTemplateColumns: '1fr 120px 120px',
+    padding: theme.spacing(1, 3),
   },
   saveButton: {
     backgroundColor: green[500],

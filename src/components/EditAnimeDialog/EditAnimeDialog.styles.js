@@ -16,7 +16,7 @@ export default makeStyles(theme => ({
   },
   dialogTitle: {
     margin: 0,
-    padding: theme.spacing(2),
+    padding: theme.spacing(2, 3),
   },
   closeButton: {
     position: 'absolute',
