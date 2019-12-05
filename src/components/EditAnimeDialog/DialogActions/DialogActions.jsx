@@ -15,7 +15,7 @@ const DialogActions = memo(function DialogActions({ handleClose }) {
   const classes = useStyles();
 
   return (
-    <MuiDialogActions>
+    <MuiDialogActions className={classes.dialogActions}>
       <Button
         variant="contained"
         startIcon={<DeleteIcon />}

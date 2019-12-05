@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DialogActions/> Renders correctly 1`] = `
-<WithStyles(ForwardRef(DialogActions))>
+<WithStyles(ForwardRef(DialogActions))
+  className="makeStyles-dialogActions-1"
+>
   <WithStyles(ForwardRef(Button))
-    className="makeStyles-deleteButton-2"
+    className="makeStyles-deleteButton-3"
     startIcon={<Memo(DeleteIcon) />}
     variant="contained"
   >
@@ -17,7 +19,7 @@ exports[`<DialogActions/> Renders correctly 1`] = `
     Discard
   </WithStyles(ForwardRef(Button))>
   <WithStyles(ForwardRef(Button))
-    className="makeStyles-saveButton-1"
+    className="makeStyles-saveButton-2"
     startIcon={<Memo(SaveIcon) />}
     variant="contained"
   >
