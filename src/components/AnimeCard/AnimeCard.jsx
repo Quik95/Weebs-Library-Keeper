@@ -26,7 +26,7 @@ function AnimeCard(props) {
 
   return (
     <>
-      <Grid item xs={3} data-testid="AnimeCard">
+      <Grid item xs={12} data-testid="AnimeCard">
         <Card className={classes.fabFix}>
           <CardMedia
             image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"

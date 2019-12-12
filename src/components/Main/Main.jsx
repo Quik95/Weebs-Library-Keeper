@@ -17,7 +17,7 @@ export default function Main() {
   return (
     <main className={classes.main} data-testid="main">
       <Container maxWidth="lg">
-        <Grid container spacing={8}>
+        <Grid container spacing={4}>
           {[0, 1, 2, 3, 4, 5].map(i => (
             <AnimeCard key={i} />
           ))}
