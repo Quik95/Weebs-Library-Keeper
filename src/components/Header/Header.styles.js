@@ -46,10 +46,7 @@ export default makeStyles(theme => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      width: 120,
-      '&:focus': {
-        width: 250,
-      },
+      width: 250,
     },
   },
 }));
