@@ -35,7 +35,7 @@ export default function SearchAppBar() {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-            <SearchResults />
+            <SearchResults open={false} />
           </div>
         </Toolbar>
       </AppBar>
