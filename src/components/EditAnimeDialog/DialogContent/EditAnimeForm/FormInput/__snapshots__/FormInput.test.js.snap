@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FormInput/> Renders correctly 1`] = `
+<WithStyles(ForwardRef(FormControl))
+  error={false}
+  variant="outlined"
+>
+  <WithStyles(ForwardRef(InputLabel))
+    htmlFor="title"
+  >
+    Title
+  </WithStyles(ForwardRef(InputLabel))>
+  <WithStyles(ForwardRef(Input))
+    aria-describedby="edit-anime-title"
+    id="title"
+    variant="outlined"
+  />
+</WithStyles(ForwardRef(FormControl))>
+`;
