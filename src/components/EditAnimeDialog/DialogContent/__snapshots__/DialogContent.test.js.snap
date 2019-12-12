@@ -1,3 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DialogContent/> Renders correctly 1`] = `<div />`;
+exports[`<DialogContent/> Renders correctly 1`] = `
+<WithStyles(ForwardRef(DialogContent))
+  dividers={true}
+>
+  <WithStyles(ForwardRef(Grid))
+    container={true}
+    spacing={4}
+  >
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={3}
+    >
+      <WithStyles(ForwardRef(CardMedia))
+        className="makeStyles-animeThumbnail-1"
+        image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
+      />
+    </WithStyles(ForwardRef(Grid))>
+    <WithStyles(ForwardRef(Grid))
+      item={true}
+      xs={9}
+    >
+      <EditAnimeForm />
+    </WithStyles(ForwardRef(Grid))>
+  </WithStyles(ForwardRef(Grid))>
+</WithStyles(ForwardRef(DialogContent))>
+`;

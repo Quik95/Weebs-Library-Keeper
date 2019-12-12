@@ -3,6 +3,7 @@
 exports[`<EditAnimeDialog/> Renders correctly 1`] = `
 <WithStyles(ForwardRef(Dialog))
   aria-labelledby="edit-anime-dialog"
+  fullWidth={true}
   maxWidth="md"
   onClose={[MockFunction]}
   open={true}
@@ -12,6 +13,9 @@ exports[`<EditAnimeDialog/> Renders correctly 1`] = `
   >
     Dr. Stone
   </Memo(DialogTitle)>
+  <DialogContent
+    animeId="to-do"
+  />
   <Memo(DialogActions)
     handleClose={[MockFunction]}
   />
