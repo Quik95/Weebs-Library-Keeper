@@ -1,19 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FormInput/> Renders correctly 1`] = `
-<WithStyles(ForwardRef(FormControl))
-  error={false}
-  variant="outlined"
+<WithStyles(ForwardRef(Grid))
+  item={true}
+  xs={4}
 >
-  <WithStyles(ForwardRef(InputLabel))
-    htmlFor="title"
-  >
-    Title
-  </WithStyles(ForwardRef(InputLabel))>
-  <WithStyles(ForwardRef(Input))
-    aria-describedby="edit-anime-title"
-    id="title"
+  <WithStyles(ForwardRef(FormControl))
+    error={false}
     variant="outlined"
-  />
-</WithStyles(ForwardRef(FormControl))>
+  >
+    <WithStyles(ForwardRef(InputLabel))
+      htmlFor="title"
+    >
+      Edit Dr. Stone
+    </WithStyles(ForwardRef(InputLabel))>
+    <WithStyles(ForwardRef(Input))
+      aria-describedby="edit-anime-Dr. Stone"
+      id="title"
+      type="text"
+      variant="outlined"
+    />
+  </WithStyles(ForwardRef(FormControl))>
+</WithStyles(ForwardRef(Grid))>
 `;

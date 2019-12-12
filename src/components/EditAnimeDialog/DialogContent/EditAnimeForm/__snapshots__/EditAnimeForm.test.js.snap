@@ -1,3 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<EditAnimeForm/> Renders correctly 1`] = `<div />`;
+exports[`<EditAnimeForm/> Renders correctly 1`] = `
+<WithStyles(ForwardRef(Grid))
+  container={true}
+  spacing={2}
+>
+  <Memo(FormInput)
+    id="title"
+    title="Title"
+  />
+  <Memo(FormInput)
+    id="anilistId"
+    title="Anilist ID"
+  />
+  <Memo(FormInput)
+    id="thumbnailUrl"
+    title="Thumbnail URL"
+  />
+  <Memo(FormInput)
+    id="watchedEpisodes"
+    title="Watched Episodes"
+    type="number"
+  />
+  <Memo(FormInput)
+    id="airedEpisodes"
+    title="Aired Episodes"
+    type="number"
+  />
+  <Memo(FormInput)
+    id="totalEpisodes"
+    title="Total Episodes"
+    type="number"
+  />
+</WithStyles(ForwardRef(Grid))>
+`;
