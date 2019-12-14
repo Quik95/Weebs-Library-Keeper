@@ -8,12 +8,16 @@ import Input from '@material-ui/core/Input';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Grid from '@material-ui/core/Grid';
 
+//styles
+import useStyles from './FormInput.styles'
+
 const FormInput = memo(function FormInput({ title, id, type = 'text' }) {
+  const classes = useStyles()
   const error = false;
 
   return (
-    <Grid item xs={4}>
-      <FormControl variant="outlined" error={error}>
+    <Grid item xs={12} className={classes.grid}>
+      <FormControl variant="outlined" error={error} className={classes.formControl}>
         <InputLabel htmlFor={id}>{`Edit ${title}`}</InputLabel>
         <Input
           id={id}
