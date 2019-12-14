@@ -10,6 +10,7 @@ import SaveIcon from '@material-ui/icons/Save';
 
 // styles
 import useStyles from './DialogActions.styles';
+import clsx from 'clsx'
 
 const DialogActions = memo(function DialogActions({ handleClose }) {
   const classes = useStyles();
@@ -19,17 +20,17 @@ const DialogActions = memo(function DialogActions({ handleClose }) {
       <Button
         variant="contained"
         startIcon={<DeleteIcon />}
-        className={classes.deleteButton}
+        className={clsx(classes.deleteButton, classes.button)}
       >
         Delete
       </Button>
-      <Button variant="contained" color="primary" startIcon={<CloseIcon />}>
+      <Button variant="contained" color="primary" className={classes.button} startIcon={<CloseIcon />}>
         Discard
       </Button>
       <Button
         variant="contained"
         startIcon={<SaveIcon />}
-        className={classes.saveButton}
+        className={clsx(classes.saveButton, classes.button)}
       >
         Save
       </Button>
