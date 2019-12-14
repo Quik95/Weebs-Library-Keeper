@@ -13,7 +13,7 @@ import useStyles from './Header.styles';
 // custom components
 import SearchResults from './SearchResults/SearchResultsContainer';
 
-export default function SearchAppBar() {
+export default function Header() {
   const classes = useStyles();
 
   return (
