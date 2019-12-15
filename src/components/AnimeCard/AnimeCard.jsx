@@ -27,7 +27,7 @@ function AnimeCard(props) {
 
   return (
     <>
-      <Grid item xs={12} sm={6} data-testid="AnimeCard">
+      <Grid item xs={12} sm={6} md={4} data-testid="AnimeCard">
         <AiringBadge airingIn={1424123}>
           <Card className={classes.fabFix}>
             <CardMedia

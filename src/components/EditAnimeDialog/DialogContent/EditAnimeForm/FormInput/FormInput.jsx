@@ -16,7 +16,7 @@ const FormInput = memo(function FormInput({ title, id, type = "text" }) {
   const error = false;
 
   return (
-    <Grid item xs={12} sm={6} className={classes.grid}>
+    <Grid item xs={12} sm={6} md={4} className={classes.grid}>
       <FormControl
         variant="outlined"
         error={error}
