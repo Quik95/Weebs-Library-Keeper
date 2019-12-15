@@ -1,23 +1,27 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo } from "react";
+import PropTypes from "prop-types";
 
 // MUI
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Grid from '@material-ui/core/Grid';
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import Grid from "@material-ui/core/Grid";
 
 //styles
-import useStyles from './FormInput.styles'
+import useStyles from "./FormInput.styles";
 
-const FormInput = memo(function FormInput({ title, id, type = 'text' }) {
-  const classes = useStyles()
+const FormInput = memo(function FormInput({ title, id, type = "text" }) {
+  const classes = useStyles();
   const error = false;
 
   return (
-    <Grid item xs={12} className={classes.grid}>
-      <FormControl variant="outlined" error={error} className={classes.formControl}>
+    <Grid item xs={12} sm={6} className={classes.grid}>
+      <FormControl
+        variant="outlined"
+        error={error}
+        className={classes.formControl}
+      >
         <InputLabel htmlFor={id}>{`Edit ${title}`}</InputLabel>
         <Input
           id={id}
@@ -38,7 +42,7 @@ const FormInput = memo(function FormInput({ title, id, type = 'text' }) {
 FormInput.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  type: PropTypes.string,
+  type: PropTypes.string
 };
 
 export default FormInput;

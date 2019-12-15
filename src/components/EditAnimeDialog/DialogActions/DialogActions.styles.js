@@ -11,7 +11,8 @@ export default makeStyles(theme => ({
   dialogActions: {
     display: 'grid',
     gridTemplateColumns: '1fr 120px 120px',
-    gridGap: theme.spacing(1, 3),
+    gridGap: theme.spacing(2),
+    padding: theme.spacing(1, 3),
     [theme.breakpoints.down('xs')]: {
       gridTemplateColumns: '1fr',
       gridGap: theme.spacing(1)
