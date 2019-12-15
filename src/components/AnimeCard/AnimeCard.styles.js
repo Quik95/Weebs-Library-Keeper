@@ -7,5 +7,5 @@ export default makeStyles(theme => ({
   cardContent: {
     padding: theme.spacing(1, 2),
   },
-  fabFix: { overflow: 'visible', position: 'relative' },
+  fabFix: { overflow: 'visible', position: 'relative', width: '100%' },
 }));
