@@ -5,13 +5,14 @@ exports[`<DialogActions/> Renders correctly 1`] = `
   className="makeStyles-dialogActions-1"
 >
   <WithStyles(ForwardRef(Button))
-    className="makeStyles-deleteButton-3"
+    className="makeStyles-deleteButton-4 makeStyles-button-2"
     startIcon={<Memo(DeleteIcon) />}
     variant="contained"
   >
     Delete
   </WithStyles(ForwardRef(Button))>
   <WithStyles(ForwardRef(Button))
+    className="makeStyles-button-2"
     color="primary"
     startIcon={<Memo(CloseIcon) />}
     variant="contained"
@@ -19,7 +20,7 @@ exports[`<DialogActions/> Renders correctly 1`] = `
     Discard
   </WithStyles(ForwardRef(Button))>
   <WithStyles(ForwardRef(Button))
-    className="makeStyles-saveButton-2"
+    className="makeStyles-saveButton-3 makeStyles-button-2"
     startIcon={<Memo(SaveIcon) />}
     variant="contained"
   >

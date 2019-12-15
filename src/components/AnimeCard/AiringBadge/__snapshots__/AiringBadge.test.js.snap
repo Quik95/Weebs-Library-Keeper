@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders AiringBadge Renders correctly 1`] = `
+<WithStyles(ForwardRef(Badge))
+  badgeContent={
+    <Memo(BadgeContent)
+      absTime="15/12/2019 18:29"
+      relTime="9h"
+    />
+  }
+  className="makeStyles-gridFix-1"
+  color="secondary"
+  invisible={false}
+>
+  <div />
+</WithStyles(ForwardRef(Badge))>
+`;

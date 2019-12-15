@@ -38,7 +38,9 @@ exports[`<Header/> Renders correctly 1`] = `
           }
           placeholder="Search…"
         />
-        <SearchResultsContainer />
+        <SearchResultsContainer
+          open={false}
+        />
       </div>
     </WithStyles(ForwardRef(Toolbar))>
   </WithStyles(ForwardRef(AppBar))>

@@ -10,7 +10,9 @@ exports[`<DialogContent/> Renders correctly 1`] = `
   >
     <WithStyles(ForwardRef(Grid))
       item={true}
-      xs={3}
+      md={3}
+      sm={4}
+      xs={12}
     >
       <WithStyles(ForwardRef(CardMedia))
         className="makeStyles-animeThumbnail-1"
@@ -19,7 +21,9 @@ exports[`<DialogContent/> Renders correctly 1`] = `
     </WithStyles(ForwardRef(Grid))>
     <WithStyles(ForwardRef(Grid))
       item={true}
-      xs={9}
+      md={9}
+      sm={8}
+      xs={12}
     >
       <EditAnimeForm />
     </WithStyles(ForwardRef(Grid))>

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders BadgeContent Renders correctly 1`] = `
+<WithStyles(ForwardRef(Tooltip))
+  placement="top"
+  title="15/12/2019 18:25"
+>
+  <span>
+    9h
+  </span>
+</WithStyles(ForwardRef(Tooltip))>
+`;

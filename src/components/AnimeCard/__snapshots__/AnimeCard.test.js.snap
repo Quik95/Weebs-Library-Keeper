@@ -5,32 +5,40 @@ exports[`<AnimeCard/> Renders correctly 1`] = `
   <WithStyles(ForwardRef(Grid))
     data-testid="AnimeCard"
     item={true}
-    xs={3}
+    lg={3}
+    md={4}
+    sm={6}
+    xl={2}
+    xs={12}
   >
-    <WithStyles(ForwardRef(Card))
-      className="makeStyles-fabFix-3"
+    <AiringBadge
+      airingIn={1424123}
     >
-      <WithStyles(ForwardRef(CardMedia))
-        className="makeStyles-animeMedia-1"
-        image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
-      />
-      <WithStyles(ForwardRef(CardContent))
-        className="makeStyles-cardContent-2"
+      <WithStyles(ForwardRef(Card))
+        className="makeStyles-fabFix-3"
       >
-        <WithStyles(ForwardRef(Typography))
-          align="center"
-          gutterBottom={true}
-          noWrap={true}
-          variant="body1"
+        <WithStyles(ForwardRef(CardMedia))
+          className="makeStyles-animeMedia-1"
+          image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
+        />
+        <WithStyles(ForwardRef(CardContent))
+          className="makeStyles-cardContent-2"
         >
-          Dr. Stone
-        </WithStyles(ForwardRef(Typography))>
-        <Memo(WatchingProgress) />
-      </WithStyles(ForwardRef(CardContent))>
-      <Memo(EditAnimeButton)
-        handleOpenDialog={[Function]}
-      />
-    </WithStyles(ForwardRef(Card))>
+          <WithStyles(ForwardRef(Typography))
+            align="center"
+            gutterBottom={true}
+            noWrap={true}
+            variant="body1"
+          >
+            Dr. Stone
+          </WithStyles(ForwardRef(Typography))>
+          <Memo(WatchingProgress) />
+        </WithStyles(ForwardRef(CardContent))>
+        <Memo(EditAnimeButton)
+          handleOpenDialog={[Function]}
+        />
+      </WithStyles(ForwardRef(Card))>
+    </AiringBadge>
   </WithStyles(ForwardRef(Grid))>
   <EditAnimeDialog
     handleClose={[Function]}

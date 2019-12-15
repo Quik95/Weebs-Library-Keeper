@@ -2,10 +2,14 @@
 
 exports[`<FormInput/> Renders correctly 1`] = `
 <WithStyles(ForwardRef(Grid))
+  className="makeStyles-grid-1"
   item={true}
-  xs={4}
+  md={4}
+  sm={6}
+  xs={12}
 >
   <WithStyles(ForwardRef(FormControl))
+    className="makeStyles-formControl-2"
     error={false}
     variant="outlined"
   >

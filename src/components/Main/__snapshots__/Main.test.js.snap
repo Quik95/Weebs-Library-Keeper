@@ -10,7 +10,7 @@ exports[`<Main/> Renders correctly 1`] = `
   >
     <WithStyles(ForwardRef(Grid))
       container={true}
-      spacing={8}
+      spacing={6}
     >
       <AnimeCard
         key="0"
