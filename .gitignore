@@ -24,3 +24,7 @@ yarn-error.log*
 
 # dependencies
 /node_modules
+
+
+#database
+db.json
