@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // MUI
 import Container from "@material-ui/core/Container";
@@ -13,16 +13,32 @@ import AnimeCard from "../AnimeCard/AnimeCard";
 //hooks
 import useBreakpoint from "../../hooks/useBreakpoint";
 
+//helpers
+import fetchSavedAnimed, {
+  cancelFetchSavedAnime
+} from "../../helpers/fetchSavedAnime";
+
 export default function Main() {
   const classes = useStyles();
   const matchesXl = useBreakpoint("xl");
+  const [animeList, setAnimeList] = useState([]);
+
+  const fetchSavedAnimeAndSetState = async () => {
+    const res = await fetchSavedAnimed();
+    setAnimeList(res);
+  };
+
+  useEffect(() => {
+    fetchSavedAnimeAndSetState();
+    return () => cancelFetchSavedAnime();
+  }, []);
 
   return (
     <main className={classes.main} data-testid="main">
       <Container maxWidth={matchesXl ? "xl" : "lg"}>
         <Grid container spacing={6}>
-          {[0, 1, 2, 3, 4, 5].map(i => (
-            <AnimeCard key={i} />
+          {animeList.map(({ _id }) => (
+            <AnimeCard key={_id} />
           ))}
         </Grid>
       </Container>
