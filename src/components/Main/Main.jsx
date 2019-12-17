@@ -38,7 +38,7 @@ export default function Main() {
       <Container maxWidth={matchesXl ? "xl" : "lg"}>
         <Grid container spacing={6}>
           {animeList.map(({ _id }) => (
-            <AnimeCard key={_id} />
+            <AnimeCard key={_id} _id={_id} />
           ))}
         </Grid>
       </Container>

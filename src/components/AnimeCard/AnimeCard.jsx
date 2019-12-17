@@ -17,7 +17,7 @@ import EditAnimeButton from "./EditAnimeButton/EditAnimeButton";
 import EditAnimeDialog from "../EditAnimeDialog/EditAnimeDialog";
 import AiringBadge from "./AiringBadge/AiringBadge";
 
-function AnimeCard(props) {
+function AnimeCard({ _id }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const classes = useStyles();
@@ -53,6 +53,8 @@ function AnimeCard(props) {
   );
 }
 
-AnimeCard.propTypes = {};
+AnimeCard.propTypes = {
+  _id: PropTypes.string.isRequired
+};
 
 export default AnimeCard;
