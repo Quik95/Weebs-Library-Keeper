@@ -1,16 +1,16 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo } from "react";
+import PropTypes from "prop-types";
 
 // MUI
-import MuiDialogActions from '@material-ui/core/DialogActions';
-import Button from '@material-ui/core/Button';
-import DeleteIcon from '@material-ui/icons/Delete';
-import CloseIcon from '@material-ui/icons/Close';
-import SaveIcon from '@material-ui/icons/Save';
+import MuiDialogActions from "@material-ui/core/DialogActions";
+import Button from "@material-ui/core/Button";
+import DeleteIcon from "@material-ui/icons/Delete";
+import CloseIcon from "@material-ui/icons/Close";
+import SaveIcon from "@material-ui/icons/Save";
 
 // styles
-import useStyles from './DialogActions.styles';
-import clsx from 'clsx'
+import useStyles from "./DialogActions.styles";
+import clsx from "clsx";
 
 const DialogActions = memo(function DialogActions({ handleClose }) {
   const classes = useStyles();
@@ -24,7 +24,13 @@ const DialogActions = memo(function DialogActions({ handleClose }) {
       >
         Delete
       </Button>
-      <Button variant="contained" color="primary" className={classes.button} startIcon={<CloseIcon />}>
+      <Button
+        variant="contained"
+        color="primary"
+        className={classes.button}
+        startIcon={<CloseIcon />}
+        onClick={handleClose}
+      >
         Discard
       </Button>
       <Button
@@ -39,7 +45,7 @@ const DialogActions = memo(function DialogActions({ handleClose }) {
 });
 
 DialogActions.propTypes = {
-  handleClose: PropTypes.func.isRequired,
+  handleClose: PropTypes.func.isRequired
 };
 
 export default DialogActions;
