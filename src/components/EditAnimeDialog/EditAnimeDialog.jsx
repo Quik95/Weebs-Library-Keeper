@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useStoreState } from "easy-peasy";
 
 // MUI
 import Dialog from "@material-ui/core/Dialog";
@@ -10,6 +11,12 @@ import DialogActions from "./DialogActions/DialogActions";
 import DialogContent from "./DialogContent/DialogContent";
 
 export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
+  const animeId = useStoreState(state => state.dialog.animeId);
+  const animeData = useStoreState(state =>
+    state.animeList.list.find(anime => anime._id === animeId)
+  );
+
+  if (!animeData) return null; //TODO
   return (
     <Dialog
       maxWidth={maxWidth}
@@ -18,8 +25,8 @@ export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
       onClose={handleClose}
       aria-labelledby="edit-anime-dialog"
     >
-      <DialogTitle onClose={handleClose}>Dr. Stone</DialogTitle>
-      <DialogContent animeId="to-do" />
+      <DialogTitle onClose={handleClose}>{animeData.title}</DialogTitle>
+      <DialogContent animeData={animeData} />
       <DialogActions handleClose={handleClose} />
     </Dialog>
   );

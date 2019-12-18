@@ -17,7 +17,11 @@ const store = createStore({
   },
   dialog: {
     isDialogVisible: false,
-    showDialog: action((state) => state.isDialogVisible = true),
+    animeId: '',
+    showDialog: action((state, payload) => {
+      state.isDialogVisible = true;
+      state.animeId = payload
+    }),
     hideDialog: action((state) => state.isDialogVisible = false),
   }
 });

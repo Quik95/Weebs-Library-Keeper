@@ -21,7 +21,8 @@ function AnimeCard({ _id }) {
   const { title, thumbnailUrl } = useStoreState(state =>
     state.animeList.list.find(anime => anime._id === _id)
   );
-  const showDialog = useStoreActions(state => state.dialog.showDialog);
+  const showDialogAction = useStoreActions(state => state.dialog.showDialog);
+  const showDialog = () => showDialogAction(_id);
 
   const classes = useStyles();
 

@@ -12,17 +12,14 @@ import useStyles from "./DialogContent.style";
 // Custom components
 import EditAnimeForm from "./EditAnimeForm/EditAnimeForm";
 
-function DialogContent({ animeId }) {
+function DialogContent({ animeData: { thumbnailUrl } }) {
   const classes = useStyles();
 
   return (
     <MuiDialogContent dividers>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={4} md={3}>
-          <CardMedia
-            image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
-            className={classes.animeThumbnail}
-          />
+          <CardMedia image={thumbnailUrl} className={classes.animeThumbnail} />
         </Grid>
         <Grid item xs={12} sm={8} md={9}>
           <EditAnimeForm />
@@ -33,7 +30,7 @@ function DialogContent({ animeId }) {
 }
 
 DialogContent.propTypes = {
-  animeId: PropTypes.string.isRequired
+  animeData: PropTypes.object.isRequired
 };
 
 export default DialogContent;
