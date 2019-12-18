@@ -1,20 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 // MUI
-import Dialog from '@material-ui/core/Dialog';
-
-// styles
-import useStyles from './EditAnimeDialog.styles';
+import Dialog from "@material-ui/core/Dialog";
 
 // Custom components
-import DialogTitle from './DialogTitle/DialogTitle';
-import DialogActions from './DialogActions/DialogActions';
-import DialogContent from './DialogContent/DialogContent';
+import DialogTitle from "./DialogTitle/DialogTitle";
+import DialogActions from "./DialogActions/DialogActions";
+import DialogContent from "./DialogContent/DialogContent";
 
 export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
-  const classes = useStyles();
-
   return (
     <Dialog
       maxWidth={maxWidth}
@@ -33,5 +28,5 @@ export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
 EditAnimeDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
-  maxWidth: PropTypes.string.isRequired,
+  maxWidth: PropTypes.string.isRequired
 };
