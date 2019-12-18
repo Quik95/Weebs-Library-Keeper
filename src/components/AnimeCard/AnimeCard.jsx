@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useStoreState } from "easy-peasy";
 
 // MUI
 import Card from "@material-ui/core/Card";
@@ -19,6 +20,9 @@ import AiringBadge from "./AiringBadge/AiringBadge";
 
 function AnimeCard({ _id }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { title, thumbnailUrl } = useStoreState(state =>
+    state.animeList.list.find(anime => anime._id === _id)
+  );
 
   const classes = useStyles();
 
@@ -30,13 +34,10 @@ function AnimeCard({ _id }) {
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2} data-testid="AnimeCard">
         <AiringBadge airingIn={1424123}>
           <Card className={classes.fabFix}>
-            <CardMedia
-              image="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-5p1MKBlGxZFF.jpg"
-              className={classes.animeMedia}
-            />
+            <CardMedia image={thumbnailUrl} className={classes.animeMedia} />
             <CardContent className={classes.cardContent}>
               <Typography variant="body1" align="center" noWrap gutterBottom>
-                Dr. Stone
+                {title}
               </Typography>
               <WatchingProgress />
             </CardContent>

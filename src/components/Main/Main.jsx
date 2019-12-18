@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
+import { useStoreActions, useStoreState } from "easy-peasy";
 
 // MUI
 import Container from "@material-ui/core/Container";
@@ -21,17 +22,20 @@ import fetchSavedAnimed, {
 export default function Main() {
   const classes = useStyles();
   const matchesXl = useBreakpoint("xl");
-  const [animeList, setAnimeList] = useState([]);
+  const animeList = useStoreState(state => state.animeList.list);
+  const replaceAnimelistAction = useStoreActions(
+    state => state.animeList.replace
+  );
 
-  const fetchSavedAnimeAndSetState = async () => {
+  const fetchSavedAnimeAndSetState = useCallback(async () => {
     const res = await fetchSavedAnimed();
-    setAnimeList(res);
-  };
+    replaceAnimelistAction(res);
+  }, [replaceAnimelistAction]);
 
   useEffect(() => {
     fetchSavedAnimeAndSetState();
     return () => cancelFetchSavedAnime();
-  }, []);
+  }, [fetchSavedAnimeAndSetState]);
 
   return (
     <main className={classes.main} data-testid="main">
