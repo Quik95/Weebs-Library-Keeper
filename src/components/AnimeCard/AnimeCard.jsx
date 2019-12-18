@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import { useStoreState } from "easy-peasy";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 // MUI
 import Card from "@material-ui/core/Card";
@@ -15,19 +15,15 @@ import useStyles from "./AnimeCard.styles";
 // Custom components
 import WatchingProgress from "./WatchingProgress/WatchingProgress";
 import EditAnimeButton from "./EditAnimeButton/EditAnimeButton";
-import EditAnimeDialog from "../EditAnimeDialog/EditAnimeDialog";
 import AiringBadge from "./AiringBadge/AiringBadge";
 
 function AnimeCard({ _id }) {
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { title, thumbnailUrl } = useStoreState(state =>
     state.animeList.list.find(anime => anime._id === _id)
   );
+  const showDialog = useStoreActions(state => state.dialog.showDialog);
 
   const classes = useStyles();
-
-  const handleOpenDialog = () => setIsDialogOpen(true);
-  const handleCloseDialog = () => setIsDialogOpen(false);
 
   return (
     <>
@@ -41,15 +37,10 @@ function AnimeCard({ _id }) {
               </Typography>
               <WatchingProgress />
             </CardContent>
-            <EditAnimeButton handleOpenDialog={handleOpenDialog} />
+            <EditAnimeButton handleOpenDialog={showDialog} />
           </Card>
         </AiringBadge>
       </Grid>
-      <EditAnimeDialog
-        open={isDialogOpen}
-        maxWidth="md"
-        handleClose={handleCloseDialog}
-      />
     </>
   );
 }
