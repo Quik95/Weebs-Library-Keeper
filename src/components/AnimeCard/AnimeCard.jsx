@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useStoreState, useStoreActions } from "easy-peasy";
+import { useStoreActions } from "easy-peasy";
 
 // MUI
 import Card from "@material-ui/core/Card";
@@ -17,10 +17,11 @@ import WatchingProgress from "./WatchingProgress/WatchingProgress";
 import EditAnimeButton from "./EditAnimeButton/EditAnimeButton";
 import AiringBadge from "./AiringBadge/AiringBadge";
 
+//hooks
+import useFindAnime from "../../hooks/useFindAnime";
+
 function AnimeCard({ _id }) {
-  const { title, thumbnailUrl } = useStoreState(state =>
-    state.animeList.list.find(anime => anime._id === _id)
-  );
+  const { title, thumbnailUrl } = useFindAnime(_id);
   const showDialogAction = useStoreActions(state => state.dialog.showDialog);
   const showDialog = () => showDialogAction(_id);
 

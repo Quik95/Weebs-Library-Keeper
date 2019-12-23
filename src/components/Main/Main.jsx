@@ -23,18 +23,12 @@ import fetchSavedAnimed, {
 export default function Main() {
   const classes = useStyles();
   const matchesXl = useBreakpoint("xl");
-  const { animeList, isDialogVisible } = useStoreState(state => {
-    return {
-      animeList: state.animeList.list,
-      isDialogVisible: state.dialog.isDialogVisible
-    };
-  });
-  const { replaceAnimelistAction, hideDialog } = useStoreActions(state => {
-    return {
-      replaceAnimelistAction: state.animeList.replace,
-      hideDialog: state.dialog.hideDialog
-    };
-  });
+  const animeList = useStoreState(state => state.animeList.list);
+  const isDialogVisible = useStoreState(state => state.dialog.isDialogVisible);
+  const replaceAnimelistAction = useStoreActions(
+    state => state.animeList.replace
+  );
+  const hideDialog = useStoreActions(state => state.dialog.hideDialog);
 
   const fetchSavedAnimeAndSetState = useCallback(async () => {
     const res = await fetchSavedAnimed();

@@ -10,12 +10,12 @@ import DialogTitle from "./DialogTitle/DialogTitle";
 import DialogActions from "./DialogActions/DialogActions";
 import DialogContent from "./DialogContent/DialogContent";
 
+//hooks
+import useFindAnime from "../../hooks/useFindAnime";
+
 export default function EditAnimeDialog({ maxWidth, open, handleClose }) {
   const animeId = useStoreState(state => state.dialog.animeId);
-  const animeData = useStoreState(state =>
-    state.animeList.list.find(anime => anime._id === animeId)
-  );
-
+  const animeData = useFindAnime(animeId);
   if (!animeData) return null; //TODO
   return (
     <Dialog
