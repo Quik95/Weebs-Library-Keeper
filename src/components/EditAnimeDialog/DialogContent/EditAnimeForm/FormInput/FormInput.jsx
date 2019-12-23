@@ -1,48 +1,37 @@
-import React, { memo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 // MUI
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Input from "@material-ui/core/Input";
-import FormHelperText from "@material-ui/core/FormHelperText";
+import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 
 //styles
 import useStyles from "./FormInput.styles";
 
-const FormInput = memo(function FormInput({ title, id, type = "text" }) {
+const FormInput = function FormInput({ title, id, type = "text", value }) {
   const classes = useStyles();
   const error = false;
 
   return (
     <Grid item xs={12} sm={6} md={4} className={classes.grid}>
-      <FormControl
-        variant="outlined"
+      <TextField
         error={error}
-        className={classes.formControl}
-      >
-        <InputLabel htmlFor={id}>{`Edit ${title}`}</InputLabel>
-        <Input
-          id={id}
-          aria-describedby={`edit-anime-${title}`}
-          variant="outlined"
-          type={type}
-        />
-        {error && (
-          <FormHelperText id={`${id}-helper-text`}>
-            {`${title} helper text`}
-          </FormHelperText>
-        )}
-      </FormControl>
+        id={id}
+        label={title}
+        // value={value}
+        defaultValue={value}
+        variant="outlined"
+        type={type}
+      />
     </Grid>
   );
-});
+};
 
 FormInput.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  type: PropTypes.string
+  type: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
 };
 
 export default FormInput;

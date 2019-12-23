@@ -12,7 +12,7 @@ import useStyles from "./DialogContent.style";
 // Custom components
 import EditAnimeForm from "./EditAnimeForm/EditAnimeForm";
 
-function DialogContent({ animeData: { thumbnailUrl } }) {
+function DialogContent({ animeData: { thumbnailUrl, _id } }) {
   const classes = useStyles();
 
   return (
@@ -22,7 +22,7 @@ function DialogContent({ animeData: { thumbnailUrl } }) {
           <CardMedia image={thumbnailUrl} className={classes.animeThumbnail} />
         </Grid>
         <Grid item xs={12} sm={8} md={9}>
-          <EditAnimeForm />
+          <EditAnimeForm animeId={_id} />
         </Grid>
       </Grid>
     </MuiDialogContent>
