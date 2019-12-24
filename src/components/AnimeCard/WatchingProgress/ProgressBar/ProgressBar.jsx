@@ -1,19 +1,27 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
+import React, { memo } from "react";
+import PropTypes from "prop-types";
 
 // MUI
-import Tooltip from '@material-ui/core/Tooltip';
+import Tooltip from "@material-ui/core/Tooltip";
 
 // styles
-import clsx from 'clsx';
-import useStyles from '../WatchingProgress.styles';
+import clsx from "clsx";
+import useStyles from "../WatchingProgress.styles";
 
-const ProgressBar = memo(function ProgressBar({ className, tooltipText }) {
+const ProgressBar = memo(function ProgressBar({
+  className,
+  tooltipText,
+  width = 100
+}) {
   const classes = useStyles();
+  console.log(width);
 
   return (
     <Tooltip title={tooltipText} data-testid="ProgressBar">
-      <div className={clsx(classes.progress, classes[className])} />
+      <div
+        className={clsx(classes.progress, classes[className])}
+        style={{ width: `${width}%` }}
+      />
     </Tooltip>
   );
 });
@@ -21,6 +29,7 @@ const ProgressBar = memo(function ProgressBar({ className, tooltipText }) {
 ProgressBar.propTypes = {
   className: PropTypes.string.isRequired,
   tooltipText: PropTypes.string.isRequired,
+  width: PropTypes.number.isRequired
 };
 
 export default ProgressBar;

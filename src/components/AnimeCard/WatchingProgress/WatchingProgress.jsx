@@ -1,27 +1,36 @@
-import React, { memo } from 'react';
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
+import React, { memo } from "react";
+import PropTypes from "prop-types";
+import Typography from "@material-ui/core/Typography";
 
 // Custom components
-import ProgressBar from './ProgressBar/ProgressBar';
+import ProgressBar from "./ProgressBar/ProgressBar";
 
 // styles
-import useStyles from './WatchingProgress.styles';
+import useStyles from "./WatchingProgress.styles";
 
-const WatchingProgress = memo(function WatchingProgress(props) {
+const WatchingProgress = memo(function WatchingProgress({
+  watched,
+  aired,
+  total
+}) {
   const classes = useStyles();
+
+  const watchedWidth = (watched / total) * 100;
+  const airedWidth = (aired / total) * 100;
 
   return (
     <div className={classes.watchingProgress} data-testid="WatchingProgress">
-      <Typography variant="caption">10/15</Typography>
+      <Typography variant="caption">{`${watched}/${total}`}</Typography>
       <div className={classes.progressBarContainer}>
         <ProgressBar
           className="progress--watched"
           tooltipText="Number of episodes you watched"
+          width={watchedWidth}
         />
         <ProgressBar
           className="progress--aired"
           tooltipText="Number of episodes aired"
+          width={airedWidth}
         />
         <ProgressBar
           className="progress--total"
@@ -32,6 +41,10 @@ const WatchingProgress = memo(function WatchingProgress(props) {
   );
 });
 
-WatchingProgress.propTypes = {};
+WatchingProgress.propTypes = {
+  watched: PropTypes.number.isRequired,
+  aired: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired
+};
 
 export default WatchingProgress;

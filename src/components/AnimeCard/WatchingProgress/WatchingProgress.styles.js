@@ -16,18 +16,15 @@ export default makeStyles(theme => ({
   },
   'progress--total': {
     backgroundColor: theme.palette.secondary.light,
-    width: '100%',
     zIndex: 1,
   },
   'progress--watched': {
     backgroundColor: theme.palette.secondary.main,
     zIndex: 3,
-    width: '20%',
   },
   'progress--aired': {
     backgroundColor: amber[700],
     zIndex: 2,
-    width: '60%',
   },
   watchingProgress: {
     display: 'flex',

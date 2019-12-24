@@ -21,7 +21,13 @@ import AiringBadge from "./AiringBadge/AiringBadge";
 import useFindAnime from "../../hooks/useFindAnime";
 
 function AnimeCard({ _id }) {
-  const { title, thumbnailUrl } = useFindAnime(_id);
+  const {
+    title,
+    thumbnailUrl,
+    watchedEpisodes,
+    latestEpisode,
+    episodes
+  } = useFindAnime(_id);
   const showDialogAction = useStoreActions(state => state.dialog.showDialog);
   const showDialog = () => showDialogAction(_id);
 
@@ -37,7 +43,11 @@ function AnimeCard({ _id }) {
               <Typography variant="body1" align="center" noWrap gutterBottom>
                 {title}
               </Typography>
-              <WatchingProgress />
+              <WatchingProgress
+                watched={watchedEpisodes}
+                aired={latestEpisode}
+                total={episodes}
+              />
             </CardContent>
             <EditAnimeButton handleOpenDialog={showDialog} />
           </Card>
