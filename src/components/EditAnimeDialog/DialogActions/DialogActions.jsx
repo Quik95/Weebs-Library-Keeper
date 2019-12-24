@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import PropTypes from "prop-types";
+import { useStoreActions, useStoreState } from "easy-peasy";
 
 // MUI
 import MuiDialogActions from "@material-ui/core/DialogActions";
@@ -14,7 +15,13 @@ import clsx from "clsx";
 
 const DialogActions = memo(function DialogActions({ handleClose }) {
   const classes = useStyles();
+  const saveChanges = useStoreActions(state => state.animeList.update);
+  const dialogState = useStoreState(state => state.dialog.animeData);
 
+  const handleSave = () => {
+    saveChanges(dialogState);
+    handleClose();
+  };
   return (
     <MuiDialogActions className={classes.dialogActions}>
       <Button
@@ -35,6 +42,7 @@ const DialogActions = memo(function DialogActions({ handleClose }) {
       </Button>
       <Button
         variant="contained"
+        onClick={handleSave}
         startIcon={<SaveIcon />}
         className={clsx(classes.saveButton, classes.button)}
       >

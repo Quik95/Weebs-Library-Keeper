@@ -8,6 +8,10 @@ const store = createStore({
     }),
     replace: action((state, payload) => {
       state.list = payload
+    }),
+    update: action((state, payload) => {
+      const oldAnimeDataIndex = state.list.findIndex(({ _id }) => _id === payload._id)
+      state.list[oldAnimeDataIndex] = payload
     })
   },
   errors: {
@@ -23,6 +27,15 @@ const store = createStore({
       state.animeId = payload
     }),
     hideDialog: action((state) => state.isDialogVisible = false),
+    updateAnimeData: action((state, payload) => { state.animeData = payload }),
+    animeData: {
+      title: '',
+      anilistId: '',
+      thumbnailUrl: '',
+      episodes: -1,
+      latestEpisode: -1,
+      watchedEpisodes: -1,
+    }
   }
 });
 
