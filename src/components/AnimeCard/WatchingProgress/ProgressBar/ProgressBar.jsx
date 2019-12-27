@@ -14,7 +14,6 @@ const ProgressBar = memo(function ProgressBar({
   width = 100
 }) {
   const classes = useStyles();
-  console.log(width);
 
   return (
     <Tooltip title={tooltipText} data-testid="ProgressBar">
