@@ -26,7 +26,8 @@ function AnimeCard({ _id }) {
     thumbnailUrl,
     watchedEpisodes,
     latestEpisode,
-    episodes
+    episodes,
+    anilistId
   } = useFindAnime(_id);
   const showDialogAction = useStoreActions(state => state.dialog.showDialog);
   const showDialog = () => showDialogAction(_id);
@@ -36,7 +37,7 @@ function AnimeCard({ _id }) {
   return (
     <>
       <Grid item xs={12} sm={6} md={4} lg={3} xl={2} data-testid="AnimeCard">
-        <AiringBadge airingIn={1424123}>
+        <AiringBadge anilistId={anilistId}>
           <Card className={classes.fabFix}>
             <CardMedia image={thumbnailUrl} className={classes.animeMedia} />
             <CardContent className={classes.cardContent}>
