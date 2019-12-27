@@ -26,16 +26,9 @@ const store = createStore({
       state.isDialogVisible = true;
       state.animeId = payload
     }),
-    hideDialog: action((state) => state.isDialogVisible = false),
+    hideDialog: action((state) => { state.isDialogVisible = false; state.animeData = {} }),
     updateAnimeData: action((state, payload) => { state.animeData = payload }),
-    animeData: {
-      title: '',
-      anilistId: '',
-      thumbnailUrl: '',
-      episodes: -1,
-      latestEpisode: -1,
-      watchedEpisodes: -1,
-    }
+    animeData: {}
   }
 });
 

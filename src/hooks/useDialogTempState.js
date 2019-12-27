@@ -8,7 +8,6 @@ export default function useDialogTempState(animeId) {
   const animeData = useFindAnime(animeId)
   const tempAnimeData = useStoreState(state => state.dialog.animeData)
 
-  //TODO
-  if (tempAnimeData.episodes === -1) updateAnimeData(animeData)
+  if (Object.keys(tempAnimeData).length === 0) updateAnimeData(animeData)
   return [tempAnimeData, updateAnimeData]
 }
