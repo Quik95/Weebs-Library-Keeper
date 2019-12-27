@@ -59,7 +59,7 @@ exports.updateAnimeHandler = (req, res) => {
 
     db.get('animeList')
       .find({ _id })
-      .assign({ ...req.body })
+      .assign({ _id, ...req.body })
       .write();
 
     const updatedAnimeList = db.get('animeList').value();
