@@ -24,7 +24,7 @@ exports.addAnimeHandler = (req, res) => {
       .get('animeList')
       .push({
         ...req.body,
-        id: shortId.generate(),
+        _id: shortId.generate(),
         watchedEpisode: 0,
       })
       .write();
@@ -41,11 +41,11 @@ exports.addAnimeHandler = (req, res) => {
 
 exports.updateAnimeHandler = (req, res) => {
   try {
-    const { id } = req.params;
+    const { _id } = req.params;
 
     const ifAnimeExists = db
       .get('animeList')
-      .find({ id })
+      .find({ _id })
       .value();
 
     if (!ifAnimeExists)
@@ -58,7 +58,7 @@ exports.updateAnimeHandler = (req, res) => {
     if (Object.keys(errors).length > 0) return res.status(400).json(errors);
 
     db.get('animeList')
-      .find({ id })
+      .find({ _id })
       .assign({ ...req.body })
       .write();
 
@@ -76,11 +76,11 @@ exports.updateAnimeHandler = (req, res) => {
 
 exports.deleteAnimeHandler = (req, res) => {
   try {
-    const { id } = req.params;
+    const { _id } = req.params;
 
     const deletedAnime = db
       .get('animeList')
-      .remove({ id })
+      .remove({ _id })
       .write();
     if (deletedAnime.length === 0)
       return res.status(404).json({
