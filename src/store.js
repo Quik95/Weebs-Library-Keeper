@@ -26,7 +26,7 @@ const store = createStore({
       state.isDialogVisible = true;
       state.animeId = payload
     }),
-    hideDialog: action((state) => { state.isDialogVisible = false; state.animeData = {} }),
+    hideDialog: action((state) => { state.isDialogVisible = false; state.animeData = {}; state.animeId = '' }),
     updateAnimeData: action((state, payload) => { state.animeData = payload }),
     animeData: {}
   }
