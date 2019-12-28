@@ -20,7 +20,7 @@ const WatchingProgress = memo(function WatchingProgress({
 
   return (
     <div className={classes.watchingProgress} data-testid="WatchingProgress">
-      <Typography variant="caption">{`${watched}/${total}`}</Typography>
+      <Typography variant="caption">{`${watched}/${total || "??"}`}</Typography>
       <div className={classes.progressBarContainer}>
         <ProgressBar
           className="progress--watched"
@@ -42,9 +42,9 @@ const WatchingProgress = memo(function WatchingProgress({
 });
 
 WatchingProgress.propTypes = {
-  watched: PropTypes.number.isRequired,
-  aired: PropTypes.number.isRequired,
-  total: PropTypes.number.isRequired
+  watched: PropTypes.number,
+  aired: PropTypes.number,
+  total: PropTypes.number
 };
 
 export default WatchingProgress;

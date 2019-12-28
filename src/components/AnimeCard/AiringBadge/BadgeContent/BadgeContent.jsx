@@ -20,7 +20,7 @@ const BadgeContent = memo(function BadgeContent({ timeUntilAiring }) {
 });
 
 BadgeContent.propTypes = {
-  timeUntilAiring: PropTypes.number.isRequired
+  timeUntilAiring: PropTypes.number
 };
 
 export default BadgeContent;

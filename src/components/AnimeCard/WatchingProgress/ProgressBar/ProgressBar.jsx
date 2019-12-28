@@ -28,7 +28,7 @@ const ProgressBar = memo(function ProgressBar({
 ProgressBar.propTypes = {
   className: PropTypes.string.isRequired,
   tooltipText: PropTypes.string.isRequired,
-  width: PropTypes.number.isRequired
+  width: PropTypes.number
 };
 
 export default ProgressBar;
