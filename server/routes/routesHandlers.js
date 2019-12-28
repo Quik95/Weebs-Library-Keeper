@@ -15,6 +15,22 @@ exports.getAllAnimeHandler = (req, res) => {
   }
 };
 
+exports.getAnimeHandler = (req, res) => {
+  try {
+    const { _id } = req.params
+    const anime = db.get('animeList').find({ _id }).value()
+    if (!anime) res.status(404).json({ message: "Could not find anime with given id", error: "NOT_FOUND" })
+    return res.status(200).json(anime)
+
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      message: 'An error ocurred on the server side. Please try again.',
+      error: 'INTERNAL_ERROR',
+    });
+  }
+}
+
 exports.addAnimeHandler = (req, res) => {
   try {
     const errors = validator(req.body);
