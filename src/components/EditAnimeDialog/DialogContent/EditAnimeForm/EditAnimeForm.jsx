@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useStoreActions } from "easy-peasy";
 
 // MUI
 import Grid from "@material-ui/core/Grid";
@@ -14,7 +13,6 @@ import useDialogTempState from "../../../../hooks/useDialogTempState";
 
 function EditAnimeForm({ animeId }) {
   const [animeData, setAnimeData] = useDialogTempState(animeId);
-  const updateAnimeData = useStoreActions(state => state.animeList.update);
 
   const {
     title,
@@ -24,10 +22,6 @@ function EditAnimeForm({ animeId }) {
     latestEpisode,
     episodes
   } = animeData;
-
-  const handleSave = () => {
-    updateAnimeData({ _id: animeId, data: animeData });
-  };
 
   const handleChange = (e, id, type) => {
     let value = e.target.value;
@@ -41,47 +35,46 @@ function EditAnimeForm({ animeId }) {
     }
     setAnimeData({ ...animeData, [id]: value });
   };
-
   return (
     <form noValidate autoComplete="false">
       <Grid container spacing={2}>
         <FormInput
           title="Title"
           id="title"
-          value={title}
+          value={title || ""}
           handleChange={handleChange}
         />
         <FormInput
           title="Anilist ID"
           id="anilistId"
-          value={anilistId}
+          value={anilistId || ""}
           handleChange={handleChange}
         />
         <FormInput
           title="Thumbnail URL"
           id="thumbnailUrl"
-          value={thumbnailUrl}
+          value={thumbnailUrl || ""}
           handleChange={handleChange}
         />
         <FormInput
           title="Watched Episodes"
           id="watchedEpisodes"
           type="number"
-          value={watchedEpisodes}
+          value={watchedEpisodes || 0}
           handleChange={handleChange}
         />
         <FormInput
           title="Aired Episodes"
           id="latestEpisode"
           type="number"
-          value={latestEpisode}
+          value={latestEpisode || 0}
           handleChange={handleChange}
         />
         <FormInput
           title="Total Episodes"
           id="episodes"
           type="number"
-          value={episodes}
+          value={episodes || 0}
           handleChange={handleChange}
         />
       </Grid>
