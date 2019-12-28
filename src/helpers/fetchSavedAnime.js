@@ -1,14 +1,13 @@
-import axios from 'axios'
+import axios, { CancelToken } from 'axios'
 import { apiBaseUrl } from '../constants'
 
-const CancelToken = axios.CancelToken
-const source = CancelToken.source()
+let cancel;
 
 export default async function fetchSavedAnime() {
   const url = apiBaseUrl + '/getAllAnime'
 
   try {
-    const savedAnime = await axios.get(url, { cancelToken: source.token })
+    const savedAnime = await axios.get(url, { cancelToken: new CancelToken(c => cancel = c) })
     return savedAnime.data
   } catch (error) {
     if (!axios.isCancel(error)) {
@@ -18,4 +17,4 @@ export default async function fetchSavedAnime() {
   }
 }
 
-export const cancelFetchSavedAnime = source.cancel
+export const cancelFetchSavedAnime = cancel
