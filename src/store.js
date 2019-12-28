@@ -1,4 +1,5 @@
 import { createStore, action } from 'easy-peasy'
+import { remove } from 'lodash'
 
 const store = createStore({
   animeList: {
@@ -12,6 +13,9 @@ const store = createStore({
     update: action((state, payload) => {
       const oldAnimeDataIndex = state.list.findIndex(({ _id }) => _id === payload._id)
       state.list[oldAnimeDataIndex] = payload
+    }),
+    remove: action((state, payload) => {
+      remove(state.list, (n) => n._id === payload)
     })
   },
   errors: {

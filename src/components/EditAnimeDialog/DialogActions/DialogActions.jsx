@@ -13,21 +13,36 @@ import SaveIcon from "@material-ui/icons/Save";
 import useStyles from "./DialogActions.styles";
 import clsx from "clsx";
 
+//helpers
+import updateAnimeRequest from "../../../helpers/server_requests/updateAnime";
+import deleteAnimeRequest from "../../../helpers/server_requests/deleteAnime";
+
 const DialogActions = memo(function DialogActions({ handleClose }) {
   const classes = useStyles();
-  const saveChanges = useStoreActions(state => state.animeList.update);
+  const saveChanges = useStoreActions(state => state.animeList.replace);
   const dialogState = useStoreState(state => state.dialog.animeData);
+  const removeAnime = useStoreActions(state => state.animeList.remove);
 
-  const handleSave = () => {
-    saveChanges(dialogState);
+  const handleSave = async () => {
+    const res = await updateAnimeRequest(dialogState);
+    saveChanges(res);
     handleClose();
   };
+
+  const handleDelete = async () => {
+    const status = await deleteAnimeRequest(dialogState._id);
+    if (status !== 204) return;
+    removeAnime(dialogState._id);
+    handleClose();
+  };
+
   return (
     <MuiDialogActions className={classes.dialogActions}>
       <Button
         variant="contained"
         startIcon={<DeleteIcon />}
         className={clsx(classes.deleteButton, classes.button)}
+        onClick={handleDelete}
       >
         Delete
       </Button>
