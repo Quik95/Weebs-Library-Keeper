@@ -20,30 +20,49 @@ import AiringBadge from "./AiringBadge/AiringBadge";
 //hooks
 import useFindAnime from "../../hooks/useFindAnime";
 
+//helpers
+import updateAnimeRequest from "../../helpers/server_requests/updateAnime";
+
 //GraphQL query
 import QUERY from "../../queries/getNextEpisodeAiringTime";
 
 function AnimeCard({ _id }) {
   const [airingTime, setAiringTime] = useState(null);
+  const [loading, setLoading] = useState(true); // TODO: use data from query
   const animeData = useFindAnime(_id);
   const showDialogAction = useStoreActions(state => state.dialog.showDialog);
   const updateAnimeData = useStoreActions(state => state.animeList.update);
   const showDialog = () => showDialogAction(_id);
   const classes = useStyles();
 
-  const { loading, error, data } = useQuery(QUERY, {
+  const { error, data } = useQuery(QUERY, {
     variables: { id: animeData.anilistId }
   });
 
   if (error) console.error(error.messege);
 
   useEffect(() => {
-    if (!data) return;
-    const res = get(data, "Media.nextAiringEpisode");
-    if (res) {
-      updateAnimeData({ ...animeData, latestEpisode: res.episode });
-      setAiringTime(res.timeUntilAiring);
-    }
+    const synchronizeAnimeData = async () => {
+      if (!data) return;
+      const nextEpisode = get(data, "Media.nextAiringEpisode.episode");
+      const timeUntilAiring = get(
+        data,
+        "Media.nextAiringEpisode.timeUntilAiring"
+      );
+      const episodes = get(data, "Media.episodes");
+      let airedEpisodes = nextEpisode - 1 || episodes;
+      const newAnimeData = { ...animeData, latestEpisode: airedEpisodes };
+      try {
+        await updateAnimeRequest(newAnimeData);
+        updateAnimeData(newAnimeData);
+        setAiringTime(timeUntilAiring);
+      } catch (error) {
+        console.error(error.messege);
+        setLoading(false);
+      }
+      setLoading(false);
+    };
+    synchronizeAnimeData();
   }, [data]); //eslint-disable-line
 
   return (
