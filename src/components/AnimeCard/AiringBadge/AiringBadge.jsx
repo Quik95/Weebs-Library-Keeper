@@ -1,7 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useQuery } from "graphql-hooks";
-import { get } from "lodash";
 
 //MUI
 import Badge from "@material-ui/core/Badge";
@@ -13,18 +11,8 @@ import useStyles from "./AiringBadge.style";
 //Custom components
 import BadgeContent from "./BadgeContent/BadgeContent";
 
-//GraphQL query
-import QUERY from "../../../queries/getNextEpisodeAiringTime";
-
-function AiringBadge({ anilistId, children }) {
+function AiringBadge({ airingTime, loading, children }) {
   const classes = useStyles();
-  const { loading, error, data } = useQuery(QUERY, {
-    variables: { id: anilistId }
-  });
-
-  if (error) {
-    return children;
-  }
 
   if (loading) {
     return (
@@ -39,27 +27,23 @@ function AiringBadge({ anilistId, children }) {
       </Badge>
     );
   }
-  if (data) {
-    const timeUntilAiring = get(
-      data,
-      "Media.nextAiringEpisode.timeUntilAiring"
-    );
-    return (
-      <Badge
-        invisible={!timeUntilAiring}
-        badgeContent={<BadgeContent timeUntilAiring={timeUntilAiring} />}
-        color="secondary"
-        className={classes.gridFix}
-      >
-        {children}
-      </Badge>
-    );
-  }
+
+  return (
+    <Badge
+      invisible={!airingTime}
+      badgeContent={<BadgeContent timeUntilAiring={airingTime} />}
+      color="secondary"
+      className={classes.gridFix}
+    >
+      {children}
+    </Badge>
+  );
 }
 
 AiringBadge.propTypes = {
   children: PropTypes.element.isRequired,
-  anilistId: PropTypes.number.isRequired
+  loading: PropTypes.bool.isRequired,
+  airingTime: PropTypes.number
 };
 
 export default AiringBadge;

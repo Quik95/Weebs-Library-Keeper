@@ -8,4 +8,5 @@ export default makeStyles(theme => ({
     padding: theme.spacing(1, 2),
   },
   fabFix: { overflow: 'visible', position: 'relative', width: '100%' },
+  spinnerFix: { display: 'flex', justifyContent: 'center', alignItems: 'center' }
 }));
