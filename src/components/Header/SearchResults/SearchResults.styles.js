@@ -19,5 +19,6 @@ export default makeStyles(theme => ({
   listItemText: {
     color: theme.palette.getContrastText(theme.palette.background.paper),
   },
-  spinnerFix: { display: 'flex', justifyContent: 'center', alignItems: 'center' }
+  spinnerFix: { display: 'flex', justifyContent: 'center', alignItems: 'center' },
+  avatarSize: { width: theme.spacing(6), height: theme.spacing(6) }
 }));

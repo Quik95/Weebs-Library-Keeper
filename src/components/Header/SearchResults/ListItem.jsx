@@ -26,7 +26,12 @@ const ListItem = memo(function ListItem({ data }) {
   return (
     <MuiListItem data-testid="ListItem">
       <ListItemAvatar>
-        <Avatar alt={title} src={data.coverImage.medium} variant="square" />
+        <Avatar
+          alt={title}
+          src={data.coverImage.medium}
+          variant="square"
+          className={classes.avatarSize}
+        />
       </ListItemAvatar>
       <ListItemText
         primary={title}
