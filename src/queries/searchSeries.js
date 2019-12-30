@@ -4,7 +4,7 @@ query ($query: String) {
     media(search: $query, type: ANIME) {
       id
       title {romaji}
-      coverImage {medium}
+      coverImage {medium, extraLarge}
       season
       startDate {year} 
     }
