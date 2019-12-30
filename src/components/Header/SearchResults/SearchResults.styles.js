@@ -19,4 +19,5 @@ export default makeStyles(theme => ({
   listItemText: {
     color: theme.palette.getContrastText(theme.palette.background.paper),
   },
+  spinnerFix: { display: 'flex', justifyContent: 'center', alignItems: 'center' }
 }));
