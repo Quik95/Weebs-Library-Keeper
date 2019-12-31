@@ -29,10 +29,12 @@ export default function SearchResultsContainer({ searchTerm }) {
   const hideOnOutOfBoundsClick = e => {
     const path = e.path;
     const wasSearchResultsContainerInPath = path.find(entry => {
-      return get(entry, "dataset.testid") === "SearchContainer";
+      const testid = get(entry, "dataset.testid");
+      if (testid === "SearchContainer") return true;
+      if (testid === "SearchBar") return true;
+      else return false;
     });
-    if (wasSearchResultsContainerInPath) return;
-    setShouldBeOpen(false);
+    setShouldBeOpen(wasSearchResultsContainerInPath);
   };
 
   useEffect(() => {
@@ -69,6 +71,7 @@ export default function SearchResultsContainer({ searchTerm }) {
       </List>
     );
   }
+  return null; //Safeguard
 }
 
 SearchResultsContainer.propTypes = {

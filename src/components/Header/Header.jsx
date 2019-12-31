@@ -26,7 +26,7 @@ export default function Header() {
           <Typography className={classes.title} variant="h6" noWrap>
             Weeb's Library Keeper
           </Typography>
-          <div className={classes.search}>
+          <div className={classes.search} data-testid="SearchBar">
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
