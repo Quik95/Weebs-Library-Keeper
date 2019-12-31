@@ -23,7 +23,7 @@ import sendAddRequest from "../../../helpers/server_requests/addAnime";
 // GraphQL queries
 import QUERY from "../../../queries/getEpisodesData";
 
-const ListItem = memo(function ListItem({ data }) {
+const ListItem = memo(function ListItem({ data, handleClose }) {
   const classes = useStyles();
   const replaceAnimeData = useStoreActions(state => state.animeList.replace);
   const [fetchEpisodesData] = useManualQuery(QUERY, {
@@ -58,6 +58,7 @@ const ListItem = memo(function ListItem({ data }) {
 
       const serverRes = await sendAddRequest(composedAnimeData);
       replaceAnimeData(serverRes);
+      handleClose();
     } catch (error) {
       console.error(error.messege);
     }
@@ -86,7 +87,8 @@ const ListItem = memo(function ListItem({ data }) {
 });
 
 ListItem.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  handleClose: PropTypes.func.isRequired
 };
 
 export default ListItem;
