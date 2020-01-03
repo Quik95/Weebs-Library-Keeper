@@ -18,19 +18,16 @@ const store = createStore({
       remove(state.list, (n) => n._id === payload)
     })
   },
-  errors: {
-    errors: {},
-    setErrors: action((state, payload) => { state.errors = payload }),
-    clearErrors: action(state => { state.errors = {} })
-  },
   dialog: {
     isDialogVisible: false,
+    errors: {},
+    setErrors: action((state, payload) => { state.errors = payload }),
     animeId: '',
     showDialog: action((state, payload) => {
       state.isDialogVisible = true;
       state.animeId = payload
     }),
-    hideDialog: action((state) => { state.isDialogVisible = false; state.animeData = {}; state.animeId = '' }),
+    hideDialog: action((state) => { state.isDialogVisible = false; state.animeData = {}; state.animeId = ''; state.errors = {} }),
     updateAnimeData: action((state, payload) => { state.animeData = payload }),
     animeData: {}
   }

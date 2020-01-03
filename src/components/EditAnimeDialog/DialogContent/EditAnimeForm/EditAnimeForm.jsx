@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useStoreState } from "easy-peasy";
 
 // MUI
 import Grid from "@material-ui/core/Grid";
@@ -13,6 +14,7 @@ import useDialogTempState from "../../../../hooks/useDialogTempState";
 
 function EditAnimeForm({ animeId }) {
   const [animeData, setAnimeData] = useDialogTempState(animeId);
+  const errors = useStoreState(state => state.dialog.errors);
 
   const {
     title,
@@ -39,24 +41,28 @@ function EditAnimeForm({ animeId }) {
     <form noValidate autoComplete="false">
       <Grid container spacing={2}>
         <FormInput
+          error={errors.title}
           title="Title"
           id="title"
           value={title || ""}
           handleChange={handleChange}
         />
         <FormInput
+          error={errors.anilistId}
           title="Anilist ID"
           id="anilistId"
           value={anilistId || ""}
           handleChange={handleChange}
         />
         <FormInput
+          error={errors.thumbnailUrl}
           title="Thumbnail URL"
           id="thumbnailUrl"
           value={thumbnailUrl || ""}
           handleChange={handleChange}
         />
         <FormInput
+          error={errors.watchedEpisodes}
           title="Watched Episodes"
           id="watchedEpisodes"
           type="number"
@@ -64,6 +70,7 @@ function EditAnimeForm({ animeId }) {
           handleChange={handleChange}
         />
         <FormInput
+          error={errors.latestEpisode}
           title="Aired Episodes"
           id="latestEpisode"
           type="number"
@@ -71,6 +78,7 @@ function EditAnimeForm({ animeId }) {
           handleChange={handleChange}
         />
         <FormInput
+          error={errors.episodes}
           title="Total Episodes"
           id="episodes"
           type="number"

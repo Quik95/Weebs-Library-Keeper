@@ -13,10 +13,10 @@ const FormInput = memo(function FormInput({
   id,
   type = "text",
   value,
-  handleChange
+  handleChange,
+  error
 }) {
   const classes = useStyles();
-  const error = false;
 
   const onInputValueChange = e => {
     handleChange(e, id, type);
@@ -25,7 +25,8 @@ const FormInput = memo(function FormInput({
   return (
     <Grid item xs={12} sm={6} md={4} className={classes.grid}>
       <TextField
-        error={error}
+        error={Boolean(error)}
+        helperText={error}
         id={id}
         label={title}
         value={value}
@@ -41,7 +42,8 @@ FormInput.propTypes = {
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   type: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  error: PropTypes.string
 };
 
 export default FormInput;

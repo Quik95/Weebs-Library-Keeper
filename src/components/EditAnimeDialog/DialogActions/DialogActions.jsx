@@ -28,12 +28,24 @@ const DialogActions = function DialogActions({ handleClose }) {
   const saveChanges = useStoreActions(state => state.animeList.replace);
   const dialogState = useStoreState(state => state.dialog.animeData);
   const removeAnime = useStoreActions(state => state.animeList.remove);
+  const setErrors = useStoreActions(state => state.dialog.setErrors);
 
   const handleSave = async () => {
-    const res = await updateAnimeRequest(dialogState);
-    saveChanges(res);
-    enqueueSnackbar("Successfully updated anime data", { variant: "success" });
-    handleClose();
+    try {
+      const res = await updateAnimeRequest(dialogState);
+      saveChanges(res);
+      enqueueSnackbar("Successfully updated anime data", {
+        variant: "success"
+      });
+      handleClose();
+    } catch (error) {
+      if (!error.isAxiosError) console.error(error);
+      else if (error.response.status === 500) {
+        enqueueSnackbar("Internal server error occurred. Please try again", {
+          variant: "error"
+        });
+      } else if (error.response.status === 400) setErrors(error.response.data);
+    }
   };
 
   const handleDelete = async () => {
