@@ -1,7 +1,7 @@
 export default `
 query ($query: String) {
   Page {
-    media(search: $query, type: ANIME, sort: [POPULARITY_DESC, START_DATE_DESC]) {
+    media(search: $query, type: ANIME, sort: [SEARCH_MATCH, START_DATE_DESC]) {
       id
       title {romaji}
       coverImage {medium, extraLarge}
