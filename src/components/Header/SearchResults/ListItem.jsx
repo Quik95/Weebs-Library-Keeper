@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useManualQuery } from "graphql-hooks";
 import { useStoreActions } from "easy-peasy";
 import { get } from "lodash";
+import { useSnackbar } from "notistack";
 
 // MUI
 import MuiListItem from "@material-ui/core/ListItem";
@@ -25,6 +26,7 @@ import QUERY from "../../../queries/getEpisodesData";
 
 const ListItem = memo(function ListItem({ data, handleClose }) {
   const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
   const replaceAnimeData = useStoreActions(state => state.animeList.replace);
   const [fetchEpisodesData] = useManualQuery(QUERY, {
     variables: { id: data.id }
@@ -39,7 +41,10 @@ const ListItem = memo(function ListItem({ data, handleClose }) {
       const { data: resData, error } = await fetchEpisodesData({
         variables: { id: data.id }
       });
-      if (error) throw new Error(error);
+      if (error) {
+        enqueueSnackbar("Failed to fetch anime info", { variant: "error" });
+        return;
+      }
       const episodes = get(resData, "Media.episodes", 0);
       const latestEpisode = get(
         resData,
@@ -58,9 +63,13 @@ const ListItem = memo(function ListItem({ data, handleClose }) {
 
       const serverRes = await sendAddRequest(composedAnimeData);
       replaceAnimeData(serverRes);
+      enqueueSnackbar("Successfully added anime to your watching list", {
+        variant: "success"
+      });
       handleClose();
     } catch (error) {
       console.error(error.messege);
+      enqueueSnackbar("Failed to add anime to database", { variant: "error" });
     }
   };
 

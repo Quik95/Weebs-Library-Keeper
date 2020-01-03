@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useStoreActions, useStoreState } from "easy-peasy";
+import { useSnackbar } from "notistack";
 
 // MUI
 import MuiDialogActions from "@material-ui/core/DialogActions";
@@ -22,6 +23,7 @@ import deleteAnimeRequest from "../../../helpers/server_requests/deleteAnime";
 
 const DialogActions = function DialogActions({ handleClose }) {
   const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
   const [open, setOpen] = useState(false);
   const saveChanges = useStoreActions(state => state.animeList.replace);
   const dialogState = useStoreState(state => state.dialog.animeData);
@@ -30,13 +32,22 @@ const DialogActions = function DialogActions({ handleClose }) {
   const handleSave = async () => {
     const res = await updateAnimeRequest(dialogState);
     saveChanges(res);
+    enqueueSnackbar("Successfully updated anime data", { variant: "success" });
     handleClose();
   };
 
   const handleDelete = async () => {
     const status = await deleteAnimeRequest(dialogState._id);
-    if (status !== 204) return;
+    if (status !== 204) {
+      enqueueSnackbar("Failed to delete anime from your watching list", {
+        variant: "error"
+      });
+      return;
+    }
     removeAnime(dialogState._id);
+    enqueueSnackbar("Successfully deleted anime from your watching list", {
+      variant: "success"
+    });
     handleClose();
   };
 
@@ -50,8 +61,7 @@ const DialogActions = function DialogActions({ handleClose }) {
           variant="contained"
           startIcon={<DeleteIcon />}
           className={clsx(classes.deleteButton, classes.button)}
-          onClick={handleOpenConfirmationDialog}
-        >
+          onClick={handleOpenConfirmationDialog}>
           Delete
         </Button>
         <Button
@@ -59,16 +69,14 @@ const DialogActions = function DialogActions({ handleClose }) {
           color="primary"
           className={classes.button}
           startIcon={<CloseIcon />}
-          onClick={handleClose}
-        >
+          onClick={handleClose}>
           Discard
         </Button>
         <Button
           variant="contained"
           onClick={handleSave}
           startIcon={<SaveIcon />}
-          className={clsx(classes.saveButton, classes.button)}
-        >
+          className={clsx(classes.saveButton, classes.button)}>
           Save
         </Button>
       </MuiDialogActions>

@@ -2,6 +2,7 @@
 import store from "./store";
 import { StoreProvider } from "easy-peasy";
 import { GraphQLClient, ClientContext } from "graphql-hooks";
+import { SnackbarProvider } from "notistack";
 
 // MUI
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -21,8 +22,10 @@ export default function App() {
       <ThemeProvider theme={palette}>
         <StoreProvider store={store}>
           <ClientContext.Provider value={client}>
-            <Header />
-            <Main />
+            <SnackbarProvider maxSnack={1}>
+              <Header />
+              <Main />
+            </SnackbarProvider>
           </ClientContext.Provider>
         </StoreProvider>
       </ThemeProvider>
