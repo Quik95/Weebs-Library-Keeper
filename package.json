@@ -26,7 +26,8 @@
     "react-dom": "^16.8.4",
     "react-scripts": "^3.0.1",
     "serialize-javascript": "2.1.1",
-    "shortid": "^2.2.15"
+    "shortid": "^2.2.15",
+    "use-debounce": "^3.3.0"
   },
   "eslintConfig": {
     "extends": "react-app"

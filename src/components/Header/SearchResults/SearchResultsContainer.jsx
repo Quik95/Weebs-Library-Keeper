@@ -3,10 +3,13 @@ import PropTypes from "prop-types";
 import { useManualQuery } from "graphql-hooks";
 import { get } from "lodash";
 import clsx from "clsx";
+import { useDebouncedCallback } from "use-debounce";
 
 // MUI
 import List from "@material-ui/core/List";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import Typography from "@material-ui/core/Typography";
+import MuiListItem from "@material-ui/core/ListItem";
 
 // styles
 import useStyles from "./SearchResults.styles";
@@ -22,6 +25,7 @@ export default function SearchResultsContainer({ searchTerm }) {
   const [fetchResults, { loading, error, data }] = useManualQuery(QUERY, {
     variables: { query: searchTerm }
   });
+  const [debouncedFetchResults] = useDebouncedCallback(fetchResults, 400);
   const classes = useStyles();
 
   const closeResults = () => setShouldBeOpen(false);
@@ -44,12 +48,12 @@ export default function SearchResultsContainer({ searchTerm }) {
     if (!searchTerm) setShouldBeOpen(false);
     else {
       setShouldBeOpen(true);
-      fetchResults();
+      debouncedFetchResults();
     }
     return () => {
       root.removeEventListener("click", hideOnOutOfBoundsClick);
     };
-  }, [fetchResults, searchTerm]);
+  }, [debouncedFetchResults, searchTerm]);
 
   if (!shouldBeOpen) return null;
   if (error) console.error(error.messege);
@@ -65,6 +69,13 @@ export default function SearchResultsContainer({ searchTerm }) {
     const resList = get(data, "Page.media", []);
     return (
       <List className={classes.listContainer} data-testid="SearchContainer">
+        {resList.length === 0 && (
+          <MuiListItem>
+            <Typography color="primary" align="center" variant="subtitle1">
+              No Results Found
+            </Typography>
+          </MuiListItem>
+        )}
         {resList.map(anime => (
           <ListItem key={anime.id} data={anime} handleClose={closeResults} />
         ))}
