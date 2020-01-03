@@ -12,9 +12,11 @@ module.exports = ({
 
   // validate title
   if (is.not.string(title)) errors.title = 'Must be a valid string.';
+  if (is.empty(title)) errors.title = 'Cannot be empty'
 
   // validate anilistId
   if (is.not.number(anilistId)) errors.anilistId = 'Must be a valid number';
+  if (is.empty(anilistId)) errors.anilistId = 'Cannot be empty'
 
   // validate thumbnailUrl
   if (is.not.string(thumbnailUrl))
